@@ -1,5 +1,4 @@
 body {
-  max-width: 700px;
   margin: auto;
   /*background: white;*/
   font-family: Merriweather, sans-serif;
@@ -7,13 +6,21 @@ body {
   line-height: 1.8em;
 }
 
-@media screen and (max-width: 600px){
-    body {
-        font-size: 2.8vmin }}
+@media (orientation: landscape) {
+  body {
+    max-width: 100vh;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+	font-size: 2.8vmin
+  }
+}
 
 #intro {
 	text-align: center;
-	padding: 7%;
+	padding: 5%;
 }
 
 #intro a {
