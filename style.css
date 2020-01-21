@@ -21,6 +21,20 @@ body {
 
 #intro {
 	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+#my_photo {
+  border-radius: 50%;
+  width: 35%;
+  margin-top: 7%; 
+}
+
+#intro_text {
 	padding: 5%;
 }
 
@@ -33,10 +47,7 @@ body {
 	color: rgba(0, 0, 0, .6);
 }
 
-#my_photo {
-  border-radius: 50%;
-  width: 40%;
-}
+
 
 #projects {
 	border-top: 1px solid grey;
