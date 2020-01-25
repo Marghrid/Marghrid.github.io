@@ -9,7 +9,7 @@ body {
 
 @media (orientation: landscape) {
   body {
-    max-width: 120vh;
+    max-width: 45em;
   }
 }
 
@@ -30,7 +30,7 @@ body {
 
 #my_photo {
   border-radius: 50%;
-  width: 35%;
+  width: 30%;
   margin-top: 7%; 
 }
 
