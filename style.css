@@ -38,12 +38,12 @@ body {
 	padding: 5%;
 }
 
-#intro a {
+a {
 	color: rgba(0, 0, 0, .5);
 	font-weight: bold;
 	text-decoration: none;
 }
-#intro a:hover {
+a:hover {
 	color: rgba(0, 0, 0, .6);
 }
 
@@ -121,4 +121,8 @@ ul.icons {
 
 footer {
 	text-align: center;
+}
+
+span.smallcaps {
+	font-variant: small-caps;
 }
