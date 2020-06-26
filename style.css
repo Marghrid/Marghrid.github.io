@@ -47,8 +47,6 @@ a:hover {
 	color: rgba(0, 0, 0, .6);
 }
 
-
-
 #projects {
 	border-top: 1px solid grey;
 	margin-top: 2em;
@@ -63,11 +61,13 @@ a:hover {
 	text-align: justify;
 	border-bottom: 1px solid grey;
 	padding: 3%;
+	font-size: 93%;
 }
 
 #projects article video,
 #projects article image,
-#projects article a.image {
+#projects article a.image,
+#projects article iframe.image {
 	width: 70%;
 	margin: 0 auto;
 	display: block;
@@ -99,7 +99,7 @@ ul.icons {
 		ul.icons li {
 			display: inline-block;
 			padding: 0 1em 0 0;
-			font-size: 150%;
+			font-size: 120%;
 			font-weight: bold;
 		}
 
@@ -113,9 +113,10 @@ ul.icons {
 
 		ul.icons li span{
 			display: inline-block;
-			padding: 0 1em 0 0;
-			font-size: 65%;
+			padding: 0 1em 0 .5em;
+			font-size: 80%;
 			font-family: Merriweather, sans-serif;
+			font-weight: normal;
 		}
 
 
