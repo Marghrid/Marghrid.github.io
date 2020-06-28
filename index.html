@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Margarida Ferreira</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather" />
-	<link href="font-awesome/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="font-awesome/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -28,12 +28,16 @@
 
 <body>
 	<section id="intro">
-		<img id="my_photo" src="images/CV_photo512.jpg">
-		<div id=intro_text><p> Hello! I am Margarida. I am a 2<sup>nd</sup> year Computer&nbsp;Science Master Student at <a href="https://tecnico.ulisboa.pt/en/">Instituto&nbsp;Superior&nbsp;Técnico, Universidade&nbsp;de&nbsp;Lisboa.</a></p>
-		<p>I am developing my Master's&nbsp;Thesis on Program&nbsp;Synthesis with <a href="https://www.inesc-id.pt/"> INESC-ID </a>.<br>
-		I am also a research intern at <a href="https://www.outsystems.com/"> OutSystems </a>.
-		My research interests include Constraint&nbsp;Programming, Algorithms and Artificial&nbsp;Intelligence.</p>
-		<a href="docs/CV_Margarida_Ferreira.pdf">Download CV</a></div>
+		<div id=intro_img_before> <img id="my_photo" src="images/CV_photo512.jpg" alt="Margarida's photo">
+		</div>
+		
+		<div id=intro_text>
+			<p> Hello! I am Margarida. I am a 2<sup>nd</sup> year Computer&nbsp;Science Master Student at <a href="https://tecnico.ulisboa.pt/en/">Instituto&nbsp;Superior&nbsp;Técnico, Universidade&nbsp;de&nbsp;Lisboa.</a></p>
+			<p>I am developing my Master's&nbsp;Thesis on Program&nbsp;Synthesis with <a href="https://www.inesc-id.pt/"> INESC-ID </a>.<br>
+			I am also a research intern at <a href="https://www.outsystems.com/"> OutSystems </a>.
+			My research interests include Constraint&nbsp;Programming, Algorithms and Artificial&nbsp;Intelligence.</p>
+			<a href="docs/CV_Margarida_Ferreira.pdf">Download CV</a>
+		</div>
 		
 	</section>
 
@@ -45,7 +49,7 @@
 			<h3><span class=smallcaps>FOREST</span>: Program Synthesis for User Input Validation</h3>
 			<h4>2019 - 2020</h4>
 			<div class="videoWrapper">
-			  <iframe class = image src="https://www.youtube.com/embed/Xg8vWlHbl7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <iframe class = image title="Forest video demo" src="https://www.youtube.com/embed/Xg8vWlHbl7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 			<p>Master's Thesis, developed with <a href="https://www.outsystems.com/"> OutSystems </a> and <a href="https://www.inesc-id.pt/"> INESC-ID </a>.</p>
 			<p>The goal of this project is to develop a validation synthesizer. Given a set of valid and invalid example values for a form’s input fields, the synthesizer automatically generates a validation, i.e., a Boolean expression that evaluates to True for all valid examples and False for all invalid ones. To increase confidence in the synthesised validation, we propose a user interaction model in which a new example input field value is presented to the user, who classifies it as valid or invalid to resolve any ambiguities in the original specification.</p>
@@ -60,7 +64,7 @@
 			<h3>Satisfying Cooperative Path-Finding</h3>
 			<h4>2017 - 2018</h4>
 			<a href="https://web.tecnico.ulisboa.pt/~ist180832/CPF/" class="image">
-				<video autoplay muted loop preload="auto">
+				<video autoplay muted loop preload="auto" title="Cooperative Path-Finding video">
 					<source src="images/cpf.mp4" type="video/mp4">
 				</video>
 			</a>
@@ -78,7 +82,7 @@
 			<h3>Robot Motion Planning Algorithms</h3>
 			<h4>2019</h4>
 			<a href="https://web.ist.utl.pt/margaridaacferreira/RoboticsFun" class="image">
-				<video autoplay muted loop preload="auto">
+				<video autoplay muted loop preload="auto" title="Robot motion planning algorithms video">
 					<source src="images/rmp4.mp4" type="video/mp4">
 				</video>
 			</a>
@@ -92,7 +96,7 @@
 			<h3>MicroMachines</h3>
 			<h4>2017</h4>
 			<a href="https://web.tecnico.ulisboa.pt/~ist180832/MicroMachines/" class="image">
-				<video autoplay muted loop preload="auto">
+				<video autoplay muted loop preload="auto" title="MicroMachines video">
 					<source src="images/micromachines.mp4" type="video/mp4">
 				</video>
 			</a>
@@ -105,7 +109,6 @@
 		</article>
 	</section>
 
-
 	<footer>
 		<p>Margarida Ferreira, 2020</p>
 		<ul class="icons">
@@ -114,5 +117,10 @@
 		</ul>
 	</footer>
 
+	<script type="text/javascript">
+		let images = ['planets', 'house'];
+		let img_str = images[Math.floor(Math.random() * images.length)];
+		// document.getElementById('intro_img_before').setAttribute('id', 'intro_img_' + img_str);
+	</script>
 </body>
 </html>

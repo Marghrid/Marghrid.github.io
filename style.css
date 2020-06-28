@@ -28,14 +28,33 @@ body {
 	justify-content: center;
 }
 
+#intro_img_planets {
+	background-image: url('images/planets.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 14% 4% 1% 4%;
+}
+
+#intro_img_house {
+	background-image: url('images/house.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 8% 4% 4% 4%;
+}
+
+#intro_img_before {
+	margin-top: 7%;
+}
+
 #my_photo {
   border-radius: 50%;
   width: 30%;
-  margin-top: 7%; 
 }
 
 #intro_text {
-	padding: 5%;
+	padding: 1% 5% 1% 5%;
 }
 
 a {
@@ -138,6 +157,10 @@ ul.icons {
 
 footer {
 	text-align: center;
+}
+
+footer .icons {
+	font-size: 120%;
 }
 
 span.smallcaps {
