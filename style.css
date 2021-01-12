@@ -107,6 +107,26 @@ a:hover {
 	font-size: 100%;
 }
 
+.calendarWrapper {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+/*  height: 70%;*/
+  padding-bottom: 55%; /* 16:9 */
+  height: 0;
+}
+
+.calendarWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 .videoWrapper {
   width: 70%;
   margin: 0 auto;
