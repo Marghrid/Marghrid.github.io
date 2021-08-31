@@ -1,7 +1,7 @@
 body {
   margin: auto;
   /*background: white;*/
-  font-family: Merriweather, sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   color: rgba(0, 0, 0, .8);
   line-height: 1.8em;
   padding: 1%;
@@ -22,7 +22,7 @@ body {
   a {
     color: rgba(255, 255, 255, 0.65) !important;
     text-decoration: none !important;
-    font-weight: bold !important;
+    font-weight: 800 !important;
   }
 
   a:hover {
@@ -41,34 +41,29 @@ body {
   }
 }
 
+a {
+	color: rgba(0, 0, 0, .55);
+	font-weight: 800;
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(0, 0, 0, .75);
+}
+
 #intro {
 	text-align: center;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-}
-
-#intro_img_planets {
-	background-image: url('images/planets.jpg');
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: top;
-	padding: 14% 4% 1% 4%;
-}
-
-#intro_img_house {
-	background-image: url('images/house.jpg');
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: top;
-	padding: 8% 4% 4% 4%;
-}
-
-#intro_img_before {
 	margin-top: 7%;
 }
+
+#intro #name {
+	font-size: 125%;
+}
+
 
 #my_photo {
   border-radius: 50%;
@@ -78,31 +73,51 @@ body {
 
 #intro_text {
 	padding: 1% 5% 1% 5%;
-	text-align: left;
 }
 
-a {
-	color: rgba(0, 0, 0, .55);
-	font-weight: bold;
-	text-decoration: none;
+
+#intro_img_house {
+	background-image: url('images/house.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 8% 4% 4% 4%;
 }
-a:hover {
-	color: rgba(0, 0, 0, .6);
+#intro_img_planets {
+	background-image: url('images/planets.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 14% 4% 1% 4%;
 }
 
-#projects {
-	border-top: 1px solid grey;
+
+#publications h4 {
+	margin-bottom: 0%;
+	font-weight: 500;
+}
+
+section {
 	margin-top: 2em;
 	padding-top: 0px;
 }
-#projects h2 {
+
+#publications /* First section */ {
+	border-top: 1.25px solid grey;
+}
+
+section h2,
+section p, 
+section ul {
 	margin: 0;
 	margin-top: 1em;
 	padding-left: 3%;
+	padding-right: 3%;
 }
-#projects article {
+
+section article {
 	text-align: justify;
-	border-bottom: 1px solid grey;
+	border-bottom: 1.25px solid grey;
 	padding: 3%;
 	font-size: 100%;
 }
@@ -124,8 +139,6 @@ a:hover {
   width: 100%;
   height: 100%;
 }
-
-
 
 .videoWrapper {
   width: 70%;
@@ -194,9 +207,32 @@ ul.icons {
 			display: inline-block;
 			padding: 0 1em 0 .5em;
 			font-size: 80%;
-			font-family: Merriweather, sans-serif;
+			font-family: "Helvetica Neue", sans-serif;
 			font-weight: normal;
 		}
+
+ul.inline {
+	cursor: default;
+	list-style: none;
+}
+
+ul.inline li {
+	display: inline-block;
+	padding: 0 1em 0 0;
+}
+
+ul.inline li:last-child {
+	padding-right: 0 !important;
+}
+
+ul.inline li .icon:before {
+	font-size: 1.25em;
+}
+
+ul.inline li span{
+	display: inline-block;
+	padding: 0 1em 0 .5em;
+}
 
 
 footer {
