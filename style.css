@@ -92,9 +92,16 @@ a:hover {
 }
 
 
-#publications h4 {
+#publications h5 {
 	margin-bottom: 0%;
 	font-weight: 500;
+	font-size: 100%;
+}
+
+#publications p {
+	margin-bottom: 0%;
+	margin-top: 0%;
+	font-size: 100%;
 }
 
 section {
@@ -107,6 +114,9 @@ section {
 }
 
 section h2,
+section h3,
+section h4,
+section h5,
 section p, 
 section ul {
 	margin: 0;
