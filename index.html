@@ -3,7 +3,7 @@
 <head>
   <title>Margarida Ferreira</title>
   <meta name="description"           
-    content="Margarida Ferreira's homepage. PhD student at CMU and Técnico Lisboa. Publications, CV and projects.">
+  content="Margarida Ferreira's homepage. PhD student at CMU and Técnico Lisboa. Publications, CV and projects.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather" />
   <link rel="stylesheet" href="font-awesome/css/all.css">
@@ -12,99 +12,104 @@
 </head>
 
 <body>
+ <div id=name><h1> Margarida Ferreira</h1></div>
   <section id="intro">
-    <div id=name><h1> Margarida Ferreira</h1></div>
-    <div id=intro_img_before>
+    <div id=photo-and-contact>
       <img id="my_photo" src="images/cv_photo_512.jpg" alt="Margarida's photo">
+      <div id=contact>
+      
+        <p><i class="fas fa-map-marker-alt"></i> &nbsp GHC 6213, CMU </p>
+        <p><i class="fas fa-map-marker-alt"></i> &nbsp 328A, INESC-ID </p>
+        <p><i class="fas fa-envelope"></i> &nbsp <span style="font-family: monospace; font-size: 100%;"> margarida@cmu.edu </span></p>
+      
+      </div>
     </div>
+    
     
     <div id=intro_text>
-      <p> Hello! I am a 1<sup>st</sup> year Computer Science PhD Student at <a href="https://www.cmu.edu">Carnegie&nbspMellon University</a> and <a href="https://tecnico.ulisboa.pt"> Instituto Superior Técnico</a>. I am part of <a href=http://www.cmuportugal.org>CMU&nbspPortugal</a>'s <a href="https://www.cmuportugal.org/dual-degree-phd/">Dual&nbspDegree PhD Program</a>.
+      <p>I am a 1<sup>st</sup> year Computer Science PhD Student at <a href="https://www.cmu.edu">Carnegie&nbspMellon University</a> and <a href="https://tecnico.ulisboa.pt">Instituto Superior Técnico</a>. I am part of <a href=http://www.cmuportugal.org>CMU&nbspPortugal</a>'s <a href="https://www.cmuportugal.org/dual-degree-phd/">Dual&nbspDegree PhD Program</a>. I am an early-stage researcher at the <a href="https://inesc-id.pt/research-areas/automated-reasoning-and-software-reliability/">Automated Reasoning and Software Reliability</a> group at <a href="https://www.inesc-id.pt/">INESC-ID</a>.
+      <ul class="education">
+        <li><i class="fas fa-graduation-cap"></i> MSc. in Computer&nbspScience and Engineering, 2020 <br> <span style="font-size: 80%;"><a href="https://tecnico.ulisboa.pt"> Instituto Superior Técnico, Universidade de Lisboa</a></span></li>
+        <li><i class="fas fa-graduation-cap"></i> BSc. in Computer&nbspScience and Engineering, 2018<br> <span style="font-size: 80%;"><a href="https://tecnico.ulisboa.pt"> Instituto Superior Técnico, Universidade de Lisboa</a></span></li>
+      </ul>
+        
+        <p id="cv"><a href="docs/CV_Margarida_Ferreira.pdf">Download CV</a></p>
+      </div>
 
-        <p>Before, I was an early-stage researcher at <a href="https://www.inesc-id.pt/">INESC-ID</a>, <a href="https://inesc-id.pt/research-areas/automated-reasoning-and-software-reliability/"> Automated Reasoning and Software Reliability</a> group. I have also been a research intern at <a href="https://www.outsystems.com">Outsystems</a>.</p>
+    </section>
 
-        <p>I have a MSc. and BSc. in Computer&nbspScience and Engineering from <a href="https://tecnico.ulisboa.pt"> Instituto Superior Técnico</a>.
-    </div>
-
-    <a href="docs/CV_Margarida_Ferreira.pdf">Download CV</a>
-    
-  </section>
-
-  <section id="publications">
-    <h2>Publications:</h2>
-    <article>
-      <h5>Counterfeiting Congestion Control Algorithms</h5>
-      <p>Margarida Ferreira, Akshay Narayan, Inês Lynce, Ruben Martins, Justine Sherry<br>
-      HotNets 2021</p>
-
-      <h5>FOREST: An Interactive Multi-tree Synthesizer for Regular Expressions</h5>
-      <p>Margarida Ferreira, Miguel Terra-Neves, Miguel Ventura, Inês Lynce, Ruben Martins<br>
-      TACAS 2021</p>
-    </article>
-  </section>
-
-  <section id="projects">
-    <h2>Projects:</h2>
-
-    <article>
-      <h3><span class=smallcaps>FOREST</span>: Program Synthesis for User Input Validation</h3>
-      <h4>2019 - 2020</h4>
-      <div class="videoWrapper">
-         <iframe class = image title="Forest video demo" src="https://www.youtube.com/embed/UQbVByABpU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section id="publications">
+      <h2>Publications:</h2>
+      <article>
+        <div class=talk-video>
+          <div class="videoWrapper">
+           <iframe class=image src="https://www.youtube.com/embed/QQuV5QnwzxE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
        </div>
-      <p>Master's Thesis, developed with <a href="https://www.outsystems.com/"> OutSystems </a> and <a href="https://www.inesc-id.pt/"> INESC-ID </a>.</p>
-      <p>The goal of this project is to develop a validation synthesizer. Given a set of valid and invalid example values for a form’s input fields, the synthesizer automatically generates a validation, i.e., a Boolean expression that evaluates to True for all valid examples and False for all invalid ones. To increase confidence in the synthesised validation, we propose a user interaction model in which a new example input field value is presented to the user, who classifies it as valid or invalid to resolve any ambiguities in the original specification.</p>
-      <ul class="icons">
-        <li><a href="https://github.com/marghrid/FOREST" class="fab fa-github"> <span> Source code </span></a>
-        <li><a href="https://colab.research.google.com/drive/1M1fUzgJLzfZ_KrD6oR_BCi-aLLG3kXMB" class="fas fa-link"> <span> Google Colab demo </span></a>
-      </ul>
-    </article>
-
-    <article>
-      <h3>Satisfying Cooperative Path-Finding</h3>
-      <h4>2017 - 2018</h4>
-      <a href="https://web.tecnico.ulisboa.pt/~ist180832/CPF/" class="image">
-        <video autoplay muted loop preload="auto" title="Cooperative Path-Finding video">
-          <source src="images/cpf.mp4" type="video/mp4">
-        </video>
-      </a>
-      <p>10-month-long project developed for the New Talents on Artificial Intelligence Grant offered by <a href="https://gulbenkian.pt/en/">Calouste Gulbenkian Foundation</a>.<br>
-
-      I studied several logic-based optimal solutions for the problem of Cooperative Path-Finding, particularly Propositional Satisfiability (SAT). I developed a SAT-based solver for this problem in order to evaluate a few different techniques.</p>
-      <ul class="icons">
-        <li><a href="https://web.tecnico.ulisboa.pt/ist180832/CPF" class="fas fa-link"> <span> Instance Viewer </span></a></li>
-        <li><a href="docs/Satisfying_Cooperative_Path_Finding.pdf" class="fas fa-file"> <span> Final Report </span></a></li>
-        <li><a href="https://github.com/marghrid/CPF" class="fab fa-github"> <span> Source code </span></a>
-      </ul>
-    </article>
-  </section>
-
-  <!-- <section id="projects">
-    <h2>Other stuff:</h2>
-    <p>I like to build browser visualizations of things.</p>
-    <ul class="inline">
-      <li><a href="http://web.tecnico.ulisboa.pt/ist180832/rr_viewer/index.html"> Ricochet Robots</a></li>
-      <li><a href="http://web.tecnico.ulisboa.pt/ist180832/CPF/index.html"> Cooperative Path Finding</a></li>
-      <li><a href="http://web.tecnico.ulisboa.pt/ist180832/MicroMachines/index.html"> MicroMachines</a></li>
-    </ul>
-  </section>
-  <section> -->
-    <h2>Calendar:</h2>
-    <article>
-      <div class="calendarWrapper">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLisbon&amp;src=bWFyZ2FyaWRhYWNmZXJyZWlyYUB0ZWNuaWNvLnVsaXNib2EucHQ&amp;color=%23039BE5&amp;mode=WEEK&amp;showTitle=0&amp;showDate=1&amp;showPrint=0&amp;showCalendars=0" style="border-width:0" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>
+       <div class=paper-info>
+         <h5>Counterfeiting Congestion Control Algorithms</h5>
+         <p>Margarida Ferreira, Akshay Narayan, Inês Lynce, Ruben Martins, Justine Sherry<br>
+         HotNets 2021</p>
+         <ul class="icons">
+          <li><a href="docs/Counterfeiting_Congestion_Control_Algorithms.pdf" class="fas fa-file"> <span> PDF </span></a></li>
+        </ul>
       </div>
     </article>
-  </section>
 
-  <footer>
-    <p>Margarida Ferreira, 2021</p>
-    <ul class="icons">
-      <li><a href="https://github.com/marghrid" class="fab fa-github"></a></li>
-      <li><a href="https://linkedin.com/in/marghrid" class="fab fa-linkedin"></a></li>
-      <li><a href="https://www.instagram.com/marghrid" class="fab fa-instagram"></a></li>
-    </ul>
-  </footer>
+    <article>
+      <div class=talk-video>
+        <div class="videoWrapper">
+         <iframe class=image src="https://www.youtube.com/embed/UQbVByABpU0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+     </div>
+     <div class=paper-info>
+       <h5>FOREST: An Interactive Multi-tree Synthesizer for Regular Expressions</h5>
+       <p>Margarida Ferreira, Miguel Terra-Neves, Miguel Ventura, Inês Lynce, Ruben Martins<br>
+       TACAS 2021</p>
+       <ul class="icons">
+        <li><a href="docs/FOREST_An_Interactive_Multitree_Synthesizer_for_Regular_Expressions.pdf" class="fas fa-file"> <span> PDF </span></a></li>
+        <li><a href="https://colab.research.google.com/drive/1M1fUzgJLzfZ_KrD6oR_BCi-aLLG3kXMB" class="fas fa-link"> <span> Google Colab demo </span></a></li>
+        <li><a href="https://github.com/marghrid/FOREST" class="fab fa-github"> <span> Source code </span></a></li>
+      </ul>
+    </article>
+
+    <article>
+      <div class=talk-video>
+
+        <video autoplay muted loop preload="auto" title="Cooperative Path-Finding video">
+          <source src="images/cpf.mp4" type="video/mp4">
+          </video>
+
+        </div>
+        <div class=paper-info>
+         <h5>Satisfying Cooperative Path-Finding</h5>
+         <p>Margarida Ferreira, Inês Lynce<br>
+         Calouste Gulbenkian Foundation, New Talents in Artificial Intelligence, 2018</p>
+         <ul class="icons">
+          <li><a href="docs/Satisfying_Cooperative_Path_Finding.pdf" class="fas fa-file"> <span> PDF </span></a></li>
+          <li><a href="https://web.tecnico.ulisboa.pt/ist180832/CPF" class="fas fa-link"> <span> Instance Viewer </span></a></li>
+          <li><a href="https://github.com/marghrid/CPF" class="fab fa-github"> <span> Source code </span></a></li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Calendar:</h2>
+      <article>
+        <div class="calendarWrapper">
+          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&mode=WEEK&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=1&src=bWRlYWxtZWlAYW5kcmV3LmNtdS5lZHU&src=bWFyZ2FyaWRhYWNmZXJyZWlyYUB0ZWNuaWNvLnVsaXNib2EucHQ&color=%23039BE5&color=%23F09300" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Margarida Ferreira, 2021</p>
+      <ul class="icons">
+        <li><a href="https://github.com/marghrid" class="fab fa-github"></a></li>
+        <li><a href="https://linkedin.com/in/marghrid" class="fab fa-linkedin"></a></li>
+        <li><a href="https://www.instagram.com/marghrid" class="fab fa-instagram"></a></li>
+      </ul>
+    </footer>
 
   <!-- <script type="text/javascript">
     let images = ['planets', 'house'];
