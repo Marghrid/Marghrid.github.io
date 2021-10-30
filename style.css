@@ -51,7 +51,7 @@ a:hover {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	row-gap: 5em;
+	column-gap: 3em;
 }
 
 #name {
