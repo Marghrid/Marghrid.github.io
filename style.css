@@ -4,7 +4,6 @@ body {
 	font-family: "Helvetica Neue", sans-serif;
 	color: rgba(0, 0, 0, .8);
 	line-height: 1.8em;
-	padding: 1%;
 }
 
 @media (orientation: landscape) {
@@ -127,7 +126,6 @@ section article {
 	align-items: center;
 	min-width: 100%;
 	justify-content: center;
-	margin: 2em;
 }
 
 .calendarWrapper {
