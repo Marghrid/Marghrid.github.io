@@ -167,7 +167,10 @@ section article {
 }
 
 .talk-video video {
-	width: 90%;
+	width: 80%;
+	margin: 5%;
+	display: block;
+	position: relative;
 }
 
 .videoWrapper iframe {
