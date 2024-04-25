@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Micro Machines</title>
+    <style>
+      body {
+        margin: 0px;
+        background-color: #fff;
+        overflow: hidden;
+      }
+      #instr {
+        position: fixed;
+        bottom: 1px;
+        right : 1px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        z-index: 10;
+        font-family: sans-serif;
+        font-size: .7em;
+        padding-left: 1em;
+        padding-right: 1em;
+        }
+
+      p {
+        line-height: .3em;
+      }
+
+	  a {
+		color: #aacfff;
+	  }
+    </style>
+    <script src="js/three.js">        </script>
+    <script src="js/global.js">       </script>
+    <script src="js/gameScene.js">    </script>
+    <script src="js/lifeScene.js">    </script>
+    <script src="js/gameElement.js">  </script>
+    <script src="js/table.js">        </script>
+    <script src="js/car.js">          </script>
+    <script src="js/cheerioTrack.js"> </script>
+    <script src="js/cheerio.js">      </script>
+    <script src="js/butter.js">       </script>
+    <script src="js/orange.js">       </script>
+    <script src="js/cameras.js">      </script>
+    <script src="js/lights.js">       </script>
+    <script src="js/init.js">         </script>
+  </head>
+  <body>
+    <script>
+    init();
+    animate();
+  </script>
+  <div id=instr>
+    <p> Arrows - Move car </p>
+    <p> S - Pause </p>
+    <p> R - Restart </p>
+    <p> 1, 2, 3 - Cameras </p>
+    <p> C, H, N - Lights </p>
+    <p> G - Shading </p>
+    <p> L - Lighting </p>
+    <p> A - Wireframe </p>
+    <p><a href="https://github.com/Marghrid/MicroMachines">Source code</a></p>
+  </div>
+  </body>
+</html>
