@@ -12,7 +12,7 @@
 
   <script type='text/javascript'>
     function showAdvanced(button) {
-      var content = document.getElementById('advancedOptions');
+      let content = document.getElementById('advancedOptions');
 
       if (content.style.display == 'none') {
           content.style.display = '';
@@ -78,9 +78,10 @@
 </head>
 
 <body>
+  <h1> Sourdough bread recipe </h1>
   <section>
-  <h1> Sourdough bread recipe: </h1>
-  <h2>Adjust ingredients amount:</h2>
+  <h2>Ingredients:</h2>
+  <h3>Adjust leaven amount and desired bread weight:</h3>
   <form onsubmit='return false;'>
 
     <!-- Main options: -->
@@ -105,11 +106,9 @@
     </div>
 
     <!-- <p><button onclick='submitForm()'> Compute amounts </button></p> -->
-  </form> 
-  </section>
+  </form>
 
-  <section>
-    <h2>Computed incredients amounts:</h2>
+    <h3>Computed ingredients for dough:</h3>
     <ul>
       <li><span id='leaven_out' class='ingredientAmount'>??</span>g leaven</li>
       <li><span id='apFlour' class='ingredientAmount'>??</span>g AP flour (11.7% protein)</li>
@@ -145,7 +144,7 @@
       </ol>
       <h3>Shaping:</h3>
       <ol>
-        <li>Flour the dough and work surface and flip the dough out onto the work surface. Shape. Scoop dough ball into a well floured proofing basket, seam side up.</li>
+        <li>Flour the dough and work surface, and flip the dough onto the work surface. Shape. Scoop dough ball into a well floured proofing basket, seam side up.</li>
       </ol>
       <h3>Proofing:</h3>
       <ol>
@@ -157,6 +156,7 @@
         <li>Preheat dutch oven in a 500&deg;F / 260&deg;C oven for 30-45min.</li>
         <li>Sprinkle Semolina or cornmeal onto a piece of parchment and flip your proofed dough ball onto the parchment seam side down.</li>
         <li>Score with lame, razor blade, or scissors.</li>
+        <li>Spray water on top.</li>
         <li>Load parchment and dough into preheated dutch oven, reduce oven temperature to 485&deg;F / 250&deg;C and bake for 18 minutes.</li>
         <li>After 18 minutes, remove lid from dutch oven. Reduce oven temperature to 465&deg;F / 240&deg;C and bake for 25 more minutes.</li>
       </ol>

@@ -1,10 +1,11 @@
 body {
   margin: auto;
   /*background: white;*/
-  font-family: Merriweather, sans-serif;
+  font-family: sans-serif;
   color: rgba(0, 0, 0, .8);
-  line-height: 1.8em;
+  line-height: 1.6em;
   padding: 1%;
+  font-weight: 200;
 }
 
 @media (orientation: landscape) {
@@ -21,7 +22,6 @@ body {
 
   a {
     color: rgba(255, 255, 255, 0.65);
-    text-decoration: none;
   }
 
   a:hover {
@@ -40,49 +40,8 @@ body {
   }
 }
 
-#intro {
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-}
-
-#intro_img_planets {
-	background-image: url('images/planets.jpg');
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: top;
-	padding: 14% 4% 1% 4%;
-}
-
-#intro_img_house {
-	background-image: url('images/house.jpg');
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: top;
-	padding: 8% 4% 4% 4%;
-}
-
-#intro_img_before {
-	margin-top: 7%;
-}
-
-#my_photo {
-  border-radius: 50%;
-  width: 30%;
-  min-width: 100px;
-}
-
-#intro_text {
-	padding: 1% 5% 1% 5%;
-	text-align: left;
-}
-
 a {
 	color: rgba(0, 50, 70, .7);
-	text-decoration: none;
 }
 a:hover {
 	color: rgb(0, 50, 70);
@@ -146,14 +105,15 @@ input {
 }
 
 #showAdvancedOptions {
-	font-size: 80%;
-	color: rgba(0, 50, 70, .5);
+	font-size: 85%;
+	color: rgba(0, 50, 50, .6);
 }
 
 #advancedOptions {
-	font-size: 80%;
+	font-size: 85%;
   padding-left: 1ex;
-  border-left: 1ex solid rgba(0, 50, 70, .2);
+  border-left: .5ex solid rgba(0, 50, 70, .2);
+  color: rgba(0, 50, 50, .8);
 }
 
 .ingredientAmount {
@@ -162,13 +122,18 @@ input {
 	padding: .1ex .3ex;
 }
 
-h3 {
-	margin-bottom: .5ex;
+h1 {
+	font-size: 160%;
 }
 
+h2 {
+	font-size: 130%;
+}
 
-h4 {
+h3 {
 	margin-bottom: .5ex;
+	font-size: 100%;
+	font-weight: bold;
 }
 
 section {
