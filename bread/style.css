@@ -2,7 +2,7 @@ body {
   margin: auto;
   /*background: white;*/
   font-family: sans-serif;
-  color: rgba(0, 0, 0, .8);
+  color: rgba(0, 0, 0, .9);
   line-height: 1.6em;
   padding: 1%;
   font-weight: 200;
@@ -14,35 +14,10 @@ body {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  a {
-    color: rgba(255, 255, 255, 0.65);
-  }
-
-  a:hover {
-	color: rgba(255, 255, 255, 0.8);
-  }
-  #intro_img_planets,
-  #intro_img_house {
-  	background-image: none;
-  	padding: 10% 1% 3%;
-  }
-}
-
-@media (min-width: 768px) {
-  body {
-    width: 70%;
-  }
-}
-
 a {
 	color: rgba(0, 50, 70, .7);
 }
+
 a:hover {
 	color: rgb(0, 50, 70);
 }
@@ -106,7 +81,6 @@ input {
 
 #showAdvancedOptions {
 	font-size: 85%;
-	color: rgba(0, 50, 50, .6);
 }
 
 #advancedOptions {
@@ -152,3 +126,52 @@ section {
 	padding: 0;
 	margin: 0;
 }
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  a:hover {
+		color: rgba(255, 255, 255, 0.8);
+  }
+
+  .icons a {
+		color: rgba(255, 255, 255, 0.65);
+	}
+
+	.icons a:hover {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	#advancedOptions {
+		color: rgba(255, 255, 255, 0.65);
+		border-left-color: rgba(255, 255, 255, 0.35);
+	}
+
+	.ingredientAmount {
+		background-color: rgba(255, 255, 255, 0.08);
+	}
+	input {
+		background-color: #333;
+		color: rgba(255, 255, 255, 0.9);
+	}
+	section {
+		border-bottom-color: rgba(255, 255, 255, 0.3);
+	}
+}
+
+@media (min-width: 768px) {
+  body {
+    width: 70%;
+  }
+}
+
+
