@@ -1,0 +1,185 @@
+body {
+  margin: auto;
+  /*background: white;*/
+  font-family: Merriweather, sans-serif;
+  color: rgba(0, 0, 0, .8);
+  line-height: 1.8em;
+  padding: 1%;
+}
+
+@media (orientation: landscape) {
+  body {
+    max-width: 45em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+  }
+
+  a:hover {
+	color: rgba(255, 255, 255, 0.8);
+  }
+  #intro_img_planets,
+  #intro_img_house {
+  	background-image: none;
+  	padding: 10% 1% 3%;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    width: 70%;
+  }
+}
+
+#intro {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+#intro_img_planets {
+	background-image: url('images/planets.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 14% 4% 1% 4%;
+}
+
+#intro_img_house {
+	background-image: url('images/house.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 8% 4% 4% 4%;
+}
+
+#intro_img_before {
+	margin-top: 7%;
+}
+
+#my_photo {
+  border-radius: 50%;
+  width: 30%;
+  min-width: 100px;
+}
+
+#intro_text {
+	padding: 1% 5% 1% 5%;
+	text-align: left;
+}
+
+a {
+	color: rgba(0, 50, 70, .7);
+	text-decoration: none;
+}
+a:hover {
+	color: rgb(0, 50, 70);
+}
+
+.icons a {
+	color: rgba(0, 0, 0, .55);
+	text-decoration: none;
+}
+
+.icons a:hover {
+	color: rgba(0, 0, 0, .6);
+}
+
+ul.icons {
+		cursor: default;
+		list-style: none;
+		padding-left: 0;
+	}
+
+		ul.icons li {
+			display: inline-block;
+			padding: 0 1em 0 0;
+			font-size: 120%;
+			font-weight: bold;
+		}
+
+			ul.icons li:last-child {
+				padding-right: 0;
+			}
+
+			ul.icons li .icon:before {
+				font-size: 1.25em;
+			}
+
+		ul.icons li span{
+			display: inline-block;
+			padding: 0 1em 0 .5em;
+			font-size: 80%;
+			font-family: Merriweather, sans-serif;
+			font-weight: normal;
+		}
+
+
+footer {
+	text-align: center;
+	font-size: 90%;
+}
+
+footer .icons {
+	font-size: 100%;
+}
+
+span.smallcaps {
+	font-variant: small-caps;
+}
+
+input {
+	width: 7ex;
+	text-align: right;
+}
+
+#showAdvancedOptions {
+	font-size: 80%;
+	color: rgba(0, 50, 70, .5);
+}
+
+#advancedOptions {
+	font-size: 80%;
+  padding-left: 1ex;
+  border-left: 1ex solid rgba(0, 50, 70, .2);
+}
+
+.ingredientAmount {
+	background-color: rgba(0, 50, 70, .08);
+	border-radius: 5px;
+	padding: .1ex .3ex;
+}
+
+h3 {
+	margin-bottom: .5ex;
+}
+
+
+h4 {
+	margin-bottom: .5ex;
+}
+
+section {
+	border-bottom: .2ex solid rgba(0, 50, 70, .4);;
+}
+
+ol {
+	margin: 0;
+}
+
+ol li {
+	padding: .3ex;
+}
+

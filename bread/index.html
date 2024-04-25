@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Bread recipe</title>
+  <meta charset='UTF-8'>
+  <meta name='description'> 
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
+  <link rel='stylesheet' href='font-awesome/css/all.css'>
+  <link rel='stylesheet' type='text/css' href='style.css' />
+  <meta name='theme-color' content='#ffffff'>
+
+  <script type='text/javascript'>
+    function showAdvanced(button) {
+      var content = document.getElementById('advancedOptions');
+
+      if (content.style.display == 'none') {
+          content.style.display = '';
+          button.innerHTML = 'Hide advanced';
+      } else {
+          content.style.display = 'none';
+          button.innerHTML = 'Show advanced';
+      }
+    }
+
+    function submitForm() {
+      leven = Number(document.getElementById('leven_in').value);
+      total = Number(document.getElementById('total').value);
+      hidration = Number(document.getElementById('hidration').value/100);
+      wwPercentage = Number(document.getElementById('wwPercentage').value/100);
+      saltPercentage = Number(document.getElementById('saltPercentage').value/100);
+
+      computeAmounts(leven, total, hidration, wwPercentage, saltPercentage);
+    }
+
+    function computeAmounts(leven, total, hidration, wwPercentage, saltPercentage) {
+      let lievito_madre = leven - 200;
+      console.assert(leven < .4 * total, 'Too much leven for the amount of bread.');
+      let water_in_leven = 100 + lievito_madre * 1/3;
+      let flour_in_leven = 100 + lievito_madre * 2/3;
+      let salt = saltPercentage * total;
+      // 75% hidration: water / flour = .75;
+      let flour = (total - salt) / (1 + hidration);
+      let water = hidration * flour;
+      let remainingWater = water - water_in_leven;
+      let wwFlour = wwPercentage * flour;
+      let APFlour = (1-wwPercentage) * flour;
+      let remainingAP = APFlour - flour_in_leven;
+      console.assert(Math.abs(wwFlour + remainingAP + remainingWater + salt + leven - total) < 1);
+
+      // console.log('Add to leven:');
+      // console.log(' - ', salt, 'g of salt');
+      // console.log(' - ', remaining_water, 'g of water');
+      // console.log(' - ', remaining_ap, 'g of AP flour');
+      // console.log(' - ', whole_flour, 'g of whole wheat flour');
+
+      leven = Math.round(leven);
+      remainingAP = Math.round(remainingAP);
+      wwFlour = Math.round(wwFlour);
+      remainingWater = Math.round(remainingWater);
+      salt = Math.round(salt);
+
+      updateAmounts(leven, remainingAP, wwFlour, remainingWater, salt);
+    }
+
+    function updateAmounts(leven, apFlour, wwFlour, remaining_water, salt) {
+      document.getElementById('leven_out').innerHTML = leven;
+      document.getElementById('apFlour').innerHTML = apFlour;
+      document.getElementById('wwFlour').innerHTML = wwFlour;
+      document.getElementById('water').innerHTML = remaining_water;
+      document.getElementById('salt').innerHTML = salt;
+    }
+
+    window.onload = submitForm;
+
+  </script>
+
+</head>
+
+<body>
+  <section>
+  <h1> Sourdough bread recipe: </h1>
+  <h2>Adjust ingredients amount:</h2>
+  <form onsubmit='return false;'>
+
+    <!-- Main options: -->
+    <label for='leven_in'>Overnight leaven:</label>
+    <input type='number' id='leven_in' name='leven_in' oninput='submitForm()' value=200>g<br>
+
+    <label for='total'>Total bread weight:</label>
+    <input type='number' id='total' name='total' oninput='submitForm()' value=1000>g<br>
+
+    <!-- Advanced options: -->
+
+    <a href='#' onclick='showAdvanced(this)' id='showAdvancedOptions'>Show advanced</a>
+    <div id='advancedOptions' style='display: none;'>
+      <label for='hidration'>Hidration:</label>
+      <input type='number' id='hidration' name='hidration' oninput='submitForm()' value=75>%<br>
+
+      <label for='wwPercentage'>Percentage of whole wheat flour:</label>
+      <input type='number' id='wwPercentage' name='wwPercentage' oninput='submitForm()' value=10>%<br>
+
+      <label for='saltPercentage'>Percentage of salt:</label>
+      <input type='number' id='saltPercentage' name='saltPercentage' oninput='submitForm()' value=1.3>%
+    </div>
+
+    <!-- <p><button onclick='submitForm()'> Compute amounts </button></p> -->
+  </form> 
+  </section>
+
+  <section>
+    <h2>Computed incredients amounts:</h2>
+    <ul>
+      <li><span id='leven_out' class='ingredientAmount'>??</span>g leven</li>
+      <li><span id='apFlour' class='ingredientAmount'>??</span>g AP flour (11.7% protein)</li>
+      <li><span id='wwFlour' class='ingredientAmount'>??</span>g WW flour (14% protein)</li>
+      <li><span id='water' class='ingredientAmount'>??</span>g water (92 F / 33 C)</li>
+      <li><span id='salt' class='ingredientAmount'>??</span>g salt</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Steps:</h2>
+
+    <h3>Mix the Dough:</h3>
+    <ol>
+      <li> Add everything but salt to KitchenAid bowl. </li>
+      <li> Run with hook attachment: 
+        <ul>
+          <li> 7min stir.</li>
+          <li> Add salt.</li>
+          <li> 3min stir.</li>
+          <li> 10min speed 2.</li>
+          <li> 5min speed 4.</li>
+        </ul>
+      </li>
+      </ol>
+      <h3>Bulk Fermentation:</h3>
+      <ol>
+        <li>Place the dough in a warm place to ferment for 30 minutes.</li>
+        <li>After 30 minutes, give you dough a set of strength building folds.</li>
+        <li> Cover dough and place in a warm place for another 30 minutes.</li>
+        <li>  After 30 minutes (or 60 minutes total) of bulk fermentation, repeat the strength building folds.</li>
+        <li> Cover and place in a warm place and continue to ferment for 2 more hours.</li>
+      </ol>
+      <h3>Shaping:</h3>
+      <ol>
+        <li>Flour the dough and work surface and flip the dough out onto the work surface. Shape. Scoop dough ball into a well floured proofing basket, seam side up.</li>
+      </ol>
+      <h3>Proofing:</h3>
+      <ol>
+        <li>Cover with a towel and allow to rise at room temperature for 90 minutes.</li>
+        <li>After 90 minutes, when poked your dough ball should hold an indent briefly before bouncing back.</li>
+      </ol>
+      <h3>Baking:</h3>
+      <ol>
+        <li>Preheat dutch oven in a 500F / 260C oven for 30-45min.</li>
+        <li>Sprinkle Semolina or cornmeal onto a piece of parchment and flip your proofed dough ball onto the parchment seam side down.</li>
+        <li>Score with lame, razor blade, or scissors.</li>
+        <li>Load parchment and dough into preheated dutch oven, reduce oven temperature to 485F / 250C and bake for 18 minutes.</li>
+        <li>After 18 minutes, remove lid from dutch oven. Reduce oven temperature to 465F / 240C and bake for 25 more minutes.</li>
+      </ol>
+  </section>
+
+  <footer>
+  	<hr>
+    <p>Margarida Ferreira, 2024</p>
+    <ul class='icons'>
+      <li><a href='https://marghrid.github.io' class='fas fa-home'></a></li>
+      <li><a href='https://github.com/marghrid' class='fab fa-github'></a></li>
+      <li><a href='https://linkedin.com/in/marghrid' class='fab fa-linkedin'></a></li>
+    </ul>
+  </footer>
+</body>
+</html>
