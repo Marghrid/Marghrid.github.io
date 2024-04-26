@@ -26,26 +26,25 @@
     function submitForm() {
       leaven = Number(document.getElementById('leaven_in').value);
       total = Number(document.getElementById('total').value);
-      hidration = Number(document.getElementById('hidration').value/100);
+      hydration = Number(document.getElementById('hydration').value/100);
       wwRatio = Number(document.getElementById('wwRatio').value/100);
       saltRatio = Number(document.getElementById('saltRatio').value/100);
 
-      computeAmounts(leaven, total, hidration, wwRatio, saltRatio);
+      computeAmounts(leaven, total, hydration, wwRatio, saltRatio);
     }
 
-    function computeAmounts(leaven, total, hidration, wwRatio, saltRatio) {
+    function computeAmounts(leaven, total, hydration, wwRatio, saltRatio) {
       let lievito_madre = leaven - 200;
       console.assert(leaven < .4 * total, 'Too much leaven for the amount of bread.');
       let water_in_leaven = 100 + lievito_madre * 1/3;
       let flour_in_leaven = 100 + lievito_madre * 2/3;
-      let salt = saltRatio * total;
-      // 75% hidration: water / flour = .75;
-      let flour = (total - salt) / (1 + hidration);
-      let water = hidration * flour;
-      let remainingWater = water - water_in_leaven;
+      let flour = total / (1 + hydration + saltRatio);
+      let water = hydration * flour;
+      let salt = saltRatio * flour;
       let wwFlour = wwRatio * flour;
-      let APFlour = (1-wwRatio) * flour;
-      let remainingAP = APFlour - flour_in_leaven;
+      let remainingWater = water - water_in_leaven;
+      let apFlour = (1 - wwRatio) * flour;
+      let remainingAP = apFlour - flour_in_leaven;
       console.assert(Math.abs(wwFlour + remainingAP + remainingWater + salt + leaven - total) < 1);
 
       // console.log('Add to leaven:');
@@ -95,17 +94,16 @@
 
     <a href='#' onclick='showAdvanced(this)' id='showAdvancedOptions'>Show advanced</a>
     <div id='advancedOptions' style='display: none;'>
-      <label for='hidration'>Hidration:</label>
-      <input type='number' id='hidration' name='hidration' oninput='submitForm()' value=75>%<br>
+      <label for='hydration'>Hydration:</label>
+      <input type='number' id='hydration' name='hydration' oninput='submitForm()' value=80>%<br>
 
-      <label for='wwRatio'>Ratio of WW to AP flour:</label>
+      <label for='wwRatio'>Ratio of WW:</label>
       <input type='number' id='wwRatio' name='wwRatio' oninput='submitForm()' value=10>%<br>
 
       <label for='saltRatio'>Ratio of salt:</label>
-      <input type='number' id='saltRatio' name='saltRatio' oninput='submitForm()' value=1.3>%
+      <input type='number' id='saltRatio' name='saltRatio' oninput='submitForm()' value=2.5>%
     </div>
 
-    <!-- <p><button onclick='submitForm()'> Compute amounts </button></p> -->
   </form>
 
     <h3>Computed ingredients for dough:</h3>
