@@ -119,13 +119,13 @@ ul.education li {
 }
 
 section article {
-	text-align: justify;
+/*	text-align: justify;*/
 	border-bottom: 1.25px solid grey;
 	display: inline-flex;
 	flex-wrap: wrap;
 	align-items: center;
 	min-width: 100%;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .calendarWrapper {
@@ -168,9 +168,22 @@ section article {
 
 .talk-video video {
 	width: 80%;
+	height: auto;
 	margin: 5%;
 	display: block;
 	position: relative;
+}
+
+.talk-video #coming-soon {
+	width: 80%;
+	margin: 5%;
+	height: 5em;
+	position: relative;
+	border: .3em dashed cadetblue;
+	text-align: center;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
 }
 
 .videoWrapper iframe {
