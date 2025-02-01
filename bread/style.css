@@ -1,17 +1,17 @@
 body {
-  margin: auto;
-  /*background: white;*/
-  font-family: sans-serif;
-  color: rgba(0, 0, 0, .9);
-  line-height: 1.6em;
-  padding: 1%;
-  font-weight: 200;
+	margin: auto;
+	/*background: white;*/
+	font-family: sans-serif;
+	color: rgba(0, 0, 0, .9);
+	line-height: 1.6em;
+	padding: 1%;
+	font-weight: 200;
 }
 
 @media (orientation: landscape) {
-  body {
-    max-width: 45em;
-  }
+	body {
+		max-width: 45em;
+	}
 }
 
 a {
@@ -32,33 +32,33 @@ a:hover {
 }
 
 ul.icons {
-		cursor: default;
-		list-style: none;
-		padding-left: 0;
-	}
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
 
-		ul.icons li {
-			display: inline-block;
-			padding: 0 1em 0 0;
-			font-size: 120%;
-			font-weight: bold;
-		}
+ul.icons li {
+	display: inline-block;
+	padding: 0 1em 0 0;
+	font-size: 120%;
+	font-weight: bold;
+}
 
-			ul.icons li:last-child {
-				padding-right: 0;
-			}
+ul.icons li:last-child {
+	padding-right: 0;
+}
 
-			ul.icons li .icon:before {
-				font-size: 1.25em;
-			}
+ul.icons li .icon:before {
+	font-size: 1.25em;
+}
 
-		ul.icons li span{
-			display: inline-block;
-			padding: 0 1em 0 .5em;
-			font-size: 80%;
-			font-family: Merriweather, sans-serif;
-			font-weight: normal;
-		}
+ul.icons li span {
+	display: inline-block;
+	padding: 0 1em 0 .5em;
+	font-size: 80%;
+	font-family: Merriweather, sans-serif;
+	font-weight: normal;
+}
 
 
 footer {
@@ -83,11 +83,19 @@ input {
 	font-size: 85%;
 }
 
-#advancedOptions {
+.advancedOptions {
 	font-size: 85%;
-  padding-left: 1ex;
-  border-left: .5ex solid rgba(0, 50, 70, .2);
-  color: rgba(0, 50, 50, .8);
+	padding-left: 1ex;
+	border-left: .5ex solid rgba(0, 50, 70, .2);
+	color: rgba(0, 50, 50, .8);
+}
+
+.warning {
+	font-size: 85%;
+	color: rgba(0, 50, 50, .8);
+	text-decoration: underline;
+	border-radius: 5px;
+	padding: .1ex .3ex;
 }
 
 .ingredientAmount {
@@ -111,7 +119,8 @@ h3 {
 }
 
 section {
-	border-bottom: .2ex solid rgba(0, 50, 70, .4);;
+	border-bottom: .2ex solid rgba(0, 50, 70, .4);
+	padding-bottom: 2ex;
 }
 
 .recipe ol {
@@ -127,23 +136,27 @@ section {
 	margin: 0;
 }
 
+.ingredients ul {
+	margin: 0;
+}
+
 
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: rgba(255, 255, 255, 0.9);
-  }
+	body {
+		background-color: #222;
+		color: rgba(255, 255, 255, 0.9);
+	}
 
-  a {
-    color: rgba(255, 255, 255, 0.65);
-  }
+	a {
+		color: rgba(255, 255, 255, 0.65);
+	}
 
-  a:hover {
+	a:hover {
 		color: rgba(255, 255, 255, 0.8);
-  }
+	}
 
-  .icons a {
+	.icons a {
 		color: rgba(255, 255, 255, 0.65);
 	}
 
@@ -151,27 +164,31 @@ section {
 		color: rgba(255, 255, 255, 0.8);
 	}
 
-	#advancedOptions {
+	.advancedOptions {
 		color: rgba(255, 255, 255, 0.65);
 		border-left-color: rgba(255, 255, 255, 0.35);
+	}
+
+	.warning {
+		color: rgba(255, 255, 255, 0.65);
 	}
 
 	.ingredientAmount {
 		background-color: rgba(255, 255, 255, 0.08);
 	}
+
 	input {
 		background-color: #333;
 		color: rgba(255, 255, 255, 0.9);
 	}
+
 	section {
 		border-bottom-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
 @media (min-width: 768px) {
-  body {
-    width: 70%;
-  }
+	body {
+		width: 70%;
+	}
 }
-
-
