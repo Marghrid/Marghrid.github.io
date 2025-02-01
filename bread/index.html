@@ -84,7 +84,7 @@
   <form onsubmit='return false;'>
 
     <!-- Main options: -->
-    <label for='leaven_in'>Overnight leaven:</label>
+    <label for='leaven_in'>Leaven:</label>
     <input type='number' id='leaven_in' name='leaven_in' oninput='submitForm()' value=200>g<br>
 
     <label for='total'>Total bread weight:</label>
@@ -101,7 +101,20 @@
       <input type='number' id='wwRatio' name='wwRatio' oninput='submitForm()' value=10>%<br>
 
       <label for='saltRatio'>Ratio of salt:</label>
-      <input type='number' id='saltRatio' name='saltRatio' oninput='submitForm()' value=2.5>%
+      <input type='number' id='saltRatio' name='saltRatio' oninput='submitForm()' value=2.5>%<br>
+
+      <label for='leavenWater'>Water in leaven:</label>
+      <input type='number' id='levenWater' name='levenWater' oninput='submitForm()' value=100>g<br>
+
+      <label for='leavenAP'>AP flour in leaven:</label>
+      <input type='number' id='levenAP' name='levenAP' oninput='submitForm()' value=100>g<br>
+
+      <label for='leavenStarter'>Sourdough starter in leaven:</label>
+      <input type='number' id='levenStarter' name='levenStarter' oninput='submitForm()' value=60>g<br>
+
+      <label for='starterHydration'>Starter hydration:</label>
+      <input type='number' id='starterHydration' name='starterHydration' oninput='submitForm()' value=0.5>%<br>
+      
     </div>
 
   </form>
