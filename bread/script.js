@@ -85,14 +85,15 @@ function computeAmounts(
   //   waterInLeavenPrep,
   //   "g of water in the leaven prep."
   // );
+
   // flour in starter used for leaven prep
   let flourInStarter = starterInLeavenPrep / (1 + starterHydration);
   // water in starter used for leaven prep
   let waterInStarter = starterInLeavenPrep - flourInStarter;
-  //   console.log("Flour in starter:", flourInStarter);
-  //   console.log("Water in starter:", waterInStarter);
+  //  console.log("Flour in starter:", flourInStarter);
+  //  console.log("Water in starter:", waterInStarter);
 
-  // total leaven prep weight
+  // total leaven prep weight. This is all that goes in the jar the day before
   let totalLeavenPrep =
     waterInLeavenPrep + apInLeavenPrep + starterInLeavenPrep;
 
@@ -116,8 +117,8 @@ function computeAmounts(
   console.assert(
     Math.abs(totalFlourInLeavenUsed + totalWaterInLeavenUsed - leavenUsed) < 1
   );
-  //   console.log("Flour in leaven used:", totalFlourInLeavenUsed);
-  //   console.log("Water in leaven used:", totalWaterInLeavenUsed);
+  //  console.log("Flour in leaven used:", totalFlourInLeavenUsed);
+  //  console.log("Water in leaven used:", totalWaterInLeavenUsed);
 
   // total flour desired in the bread
   let totalDesiredFlour = total / (1 + hydration + saltRatio);
@@ -133,6 +134,26 @@ function computeAmounts(
   // actual ingredients
   let finalWater = totalDesiredWater - totalWaterInLeavenUsed;
   let finalAp = totalDesiredApFlour - totalFlourInLeavenUsed;
+
+  // console.log(
+  //   "flour",
+  //   finalWw,
+  //   finalAp,
+  //   totalFlourInLeavenUsed,
+  //   finalWw + finalAp + totalFlourInLeavenUsed
+  // );
+  // console.log(
+  //   "water",
+  //   finalWater,
+  //   totalWaterInLeavenUsed,
+  //   finalWater + totalWaterInLeavenUsed
+  // );
+
+  // console.log(
+  //   "hydration",
+  //   (finalWater + totalWaterInLeavenUsed) /
+  //     (finalWw + finalAp + totalFlourInLeavenUsed)
+  // );
   console.assert(
     Math.abs(finalWw + finalAp + finalWater + finalSalt + leavenUsed - total) <
       1,
