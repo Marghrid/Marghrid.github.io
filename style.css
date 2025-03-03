@@ -3,7 +3,7 @@ body {
 	/*background: white;*/
 	font-family: "Helvetica Neue", sans-serif;
 	color: rgba(0, 0, 0, .8);
-	line-height: 1.8em;
+	line-height: 1.6em;
 }
 
 @media (orientation: landscape) {
@@ -40,6 +40,7 @@ a {
 	font-weight: 800;
 	text-decoration: none;
 }
+
 a:hover {
 	color: rgba(0, 0, 0, .75);
 }
@@ -121,7 +122,10 @@ ul.education li {
 	font-size: 100%;
 }
 
-#publications /* First section */ {
+#publications
+
+/* First section */
+	{
 	border-top: 1.25px solid grey;
 	align-items: center;
 	display: flex;
@@ -129,7 +133,7 @@ ul.education li {
 }
 
 section article {
-/*	text-align: justify;*/
+	/*	text-align: justify;*/
 	border-bottom: 1.25px solid grey;
 	display: inline-flex;
 	flex-wrap: wrap;
@@ -144,7 +148,8 @@ section article {
 	display: block;
 	position: relative;
 	/*  height: 70%;*/
-	padding-bottom: 55%; /* 16:9 */
+	padding-bottom: 55%;
+	/* 16:9 */
 	height: 0;
 }
 
@@ -156,7 +161,7 @@ section article {
 	height: 100%;
 }
 
-.paper-info	{
+.paper-info {
 	flex-basis: 55%;
 	flex-grow: 1;
 	margin: 1em;
@@ -172,7 +177,8 @@ section article {
 	margin: 5%;
 	display: block;
 	position: relative;
-	padding-bottom: 45%; /* 16:9 */
+	padding-bottom: 45%;
+	/* 16:9 */
 	height: 0;
 }
 
@@ -192,8 +198,8 @@ section article {
 	border: .3em dashed cadetblue;
 	text-align: center;
 	display: flex;
-  	justify-content: center;
-  	align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .videoWrapper iframe {
@@ -260,18 +266,22 @@ ul.inline li .icon:before {
 	font-size: 1.25em;
 }
 
-ul.inline li span{
+ul.inline li span {
 	display: inline-block;
 	padding: 0 1em 0 .5em;
 }
 
+footer #copyright {
+	margin-bottom: .1em;
+}
 
 footer {
 	text-align: center;
 }
 
 footer .icons {
-	font-size: 120%;
+	font-size: 110%;
+	margin-top: .1em;
 }
 
 span.smallcaps {
