@@ -61,12 +61,12 @@ a:hover {
 
 #my_photo {
 	border-radius: 50%;
-	width: 100%;
+	width: 90%;
 	margin: 1em;
 }
 
 #photo-and-contact {
-	min-width: 10em;
+	min-width: 15em;
 	font-size: 90%;
 	flex-basis: 20%;
 	display: flex;
@@ -75,7 +75,7 @@ a:hover {
 }
 
 #contact {
-	width: 13em;
+	width: 15em;
 	text-align: center;
 }
 
