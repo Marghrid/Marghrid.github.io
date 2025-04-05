@@ -8,6 +8,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
   <link rel='stylesheet' href='../font-awesome/css/all.css'>
+  <link rel='stylesheet' type='text/css' href='../style.css' />
   <link rel='stylesheet' type='text/css' href='style.css' />
   <meta name='theme-color' content='#ffffff'>
 
@@ -16,6 +17,12 @@
 </head>
 
 <body>
+  <input type="checkbox" id="darkmode-toggle" />
+  <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
+    <i class="fas fa-sun" id="sun"></i>
+    <i class="fas fa-moon" id="moon"></i>
+  </label>
+
   <h1> Sourdough bread recipe </h1>
   <section class="ingredients">
     <h2>Ingredients:</h2>
@@ -114,5 +121,7 @@
     </ul>
   </footer>
 </body>
+
+<script src="../dark-mode-toggle.js"></script>
 
 </html>
