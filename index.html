@@ -13,6 +13,12 @@
 </head>
 
 <body>
+  <input type="checkbox" id="darkmode-toggle" />
+  <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
+    <i class="fas fa-sun" id="sun"></i>
+    <i class="fas fa-moon" id="moon"></i>
+  </label>
+
   <div id=name>
     <h1> Margarida Ferreira</h1>
   </div>
@@ -175,5 +181,7 @@
     document.getElementById('intro_img_before').setAttribute('id', 'intro_img_' + img_str);
   </script> -->
 </body>
+
+<script src="dark-mode-toggle.js"></script>
 
 </html>

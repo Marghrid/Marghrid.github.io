@@ -8,7 +8,7 @@ body {
 
 @media (orientation: landscape) {
 	body {
-		max-width: 60em;
+		max-width: 65em;
 	}
 }
 
