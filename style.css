@@ -305,6 +305,12 @@ ul.inline li span {
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 	-o-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	/* For iOS */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* For Android */
+	outline: none;
+	/* To remove focus outline */
 }
 
 #darkmode-toggle-label:after {
@@ -330,6 +336,12 @@ ul.inline li span {
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 	-o-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	/* For iOS */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* For Android */
+	outline: none;
+	/* To remove focus outline */
 }
 
 #darkmode-toggle:checked+#darkmode-toggle-label {

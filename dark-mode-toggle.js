@@ -15,7 +15,6 @@ window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", (event) => {
     const newColorScheme = event.matches ? "dark" : "light";
-    console.log("Color scheme changed to: " + newColorScheme);
     toggleDarkMode();
     document.getElementById("darkmode-toggle").checked =
       newColorScheme === "dark";
