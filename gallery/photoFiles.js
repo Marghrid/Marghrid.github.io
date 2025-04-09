@@ -7,7 +7,7 @@ const photoFiles = [
     ["images/previews/DSC_2832_preview.jpg", "images/thumbnails/DSC_2832_thumb.jpg", "images/metadata/DSC_2832_metadata.json"],
     ["images/previews/DSC_2828_05_preview.jpg", "images/thumbnails/DSC_2828_05_thumb.jpg", "images/metadata/DSC_2828_05_metadata.json"],
     ["images/previews/DSC_2825_03_preview.jpg", "images/thumbnails/DSC_2825_03_thumb.jpg", "images/metadata/DSC_2825_03_metadata.json"],
-    ["images/previews/DSC_2812_03_preview.jpg", "images/thumbnails/DSC_2812_03_thumb.jpg", "images/metadata/DSC_2812_03_metadata.json"],
+    ["images/previews/DSC_2812_preview.jpg", "images/thumbnails/DSC_2812_thumb.jpg", "images/metadata/DSC_2812_metadata.json"],
     ["images/previews/DSC_2812 copy_preview.jpg", "images/thumbnails/DSC_2812 copy_thumb.jpg", "images/metadata/DSC_2812 copy_metadata.json"],
     ["images/previews/DSC_2804_preview.jpg", "images/thumbnails/DSC_2804_thumb.jpg", "images/metadata/DSC_2804_metadata.json"],
     ["images/previews/DSC_2790_preview.jpg", "images/thumbnails/DSC_2790_thumb.jpg", "images/metadata/DSC_2790_metadata.json"],
