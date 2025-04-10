@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "September 03, 2020",
-    "Time": "10:22:20",
+    "date": "September 03, 2020",
+    "time": "10:22:20",
     "camera": "NIKON D7100",
     "aperture": "f/7.1",
     "shutterSpeed": "1/200s",
     "focalLength": "18mm",
     "iso": "100"
-  }
+  },
+  "location": "Ponte de Lima, Portugal"
 }

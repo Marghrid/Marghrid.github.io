@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "September 09, 2020",
-    "Time": "19:33:35",
+    "date": "September 09, 2020",
+    "time": "19:33:35",
     "camera": "NIKON D7100",
     "aperture": "f/11.0",
     "shutterSpeed": "1/500s",
     "focalLength": "58mm",
     "iso": "100"
-  }
+  },
+  "location": "Trilho dos Sete Vales Suspensos, Carvoeiro, Portugal",
+  "title": "Farol de Alfanzina"
 }

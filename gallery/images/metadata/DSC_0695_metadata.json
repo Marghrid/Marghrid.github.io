@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "September 01, 2020",
-    "Time": "09:39:26",
+    "date": "September 01, 2020",
+    "time": "09:39:26",
     "camera": "NIKON D7100",
     "aperture": "f/5.6",
     "shutterSpeed": "1/250s",
     "focalLength": "500mm",
     "iso": "500"
-  }
+  },
+  "location": "Arcos de Valdevez, Portugal",
+  "title": "R\u00e3-verde Ib\u00e9rica"
 }

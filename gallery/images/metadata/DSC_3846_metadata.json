@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "September 09, 2020",
-    "Time": "18:23:34",
+    "date": "September 09, 2020",
+    "time": "18:23:34",
     "camera": "NIKON D7100",
     "aperture": "f/9.0",
     "shutterSpeed": "1/320s",
     "focalLength": "45mm",
     "iso": "100"
-  }
+  },
+  "location": "Trilho dos Sete Vales Suspensos, Carvoeiro, Portugal"
 }

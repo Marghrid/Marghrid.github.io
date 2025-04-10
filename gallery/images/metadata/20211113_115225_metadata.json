@@ -1,11 +1,14 @@
 {
   "fileInfo": {
-    "Date": "November 13, 2021",
-    "Time": "11:52:25",
+    "date": "November 13, 2021",
+    "time": "11:52:25",
     "camera": "Samsung Galaxy Note10+",
     "aperture": "f/2.4",
     "shutterSpeed": "1/1664s",
     "focalLength": "4mm",
     "iso": "50"
-  }
+  },
+  "location": "32 Vassar St, Cambridge, MA 02139",
+  "title": "Stata Center",
+  "description": "Boston in the fall"
 }

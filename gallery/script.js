@@ -59,12 +59,13 @@ function loadMetadata(src) {
       }
 
       if (metadata.fileInfo) {
-        if (metadata.fileInfo.Date) {
+        console.log(metadata.fileInfo);
+        if (metadata.fileInfo.date) {
           let p = document.createElement("p");
           let i = document.createElement("i");
           i.classList.add("fa-solid", "fa-calendar-days");
           p.appendChild(i);
-          p.innerHTML += "&nbsp" + metadata.fileInfo.Date;
+          p.innerHTML += "&nbsp" + metadata.fileInfo.date;
           info.appendChild(p);
         }
 
@@ -245,10 +246,16 @@ function createPreviewImg(image_src, metadata_src) {
   const img = document.createElement("img");
   img.src = image_src;
   img.id = "preview-curr-img";
+  img.onclick = function (event) {
+    event.stopPropagation();
+  };
   imgPreview.appendChild(img);
 
   const info = document.createElement("div");
   info.id = "preview-info";
+  info.onclick = function (event) {
+    event.stopPropagation();
+  };
   imgPreview.appendChild(info);
   loadMetadata(metadata_src);
 

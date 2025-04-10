@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "March 25, 2025",
-    "Time": "17:22:08",
+    "date": "March 25, 2025",
+    "time": "17:22:08",
     "camera": "NIKON D7100",
     "aperture": "f/5.6",
     "shutterSpeed": "1/250s",
     "focalLength": "105mm",
     "iso": "640"
-  }
+  },
+  "location": "Homestead, FL, USA",
+  "title": "Brown Basilisk"
 }

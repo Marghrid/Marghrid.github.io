@@ -157,6 +157,19 @@ section {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+	/* make unselectable */
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	/* For iOS */
+	-webkit-tap-highlight-color: transparent;
+	/* For Android */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* To remove focus outline */
+	outline: none;
 }
 
 #preview-info {
@@ -211,12 +224,12 @@ section {
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 	-o-user-select: none;
-	-webkit-tap-highlight-color: transparent;
 	/* For iOS */
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
 	/* For Android */
-	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	/* To remove focus outline */
+	outline: none;
 }
 
 .preview-button:hover {

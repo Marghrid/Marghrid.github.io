@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "March 12, 2023",
-    "Time": "00:22:55",
+    "date": "March 12, 2023",
+    "time": "00:22:55",
     "camera": "NIKON D7100",
     "aperture": "f/8.0",
     "shutterSpeed": "1/250s",
     "focalLength": "105mm",
     "iso": "100"
-  }
+  },
+  "title": "Elk, Horseshoe Park",
+  "location": "Rocky Mountain NP, CO, USA"
 }

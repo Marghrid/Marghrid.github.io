@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "March 09, 2023",
-    "Time": "02:15:23",
+    "date": "March 09, 2023",
+    "time": "02:15:23",
     "camera": "NIKON D7100",
     "aperture": "f/5.0",
     "shutterSpeed": "1/60s",
     "focalLength": "50mm",
     "iso": "400"
-  }
+  },
+  "location": "Arches NP, UT, USA"
 }

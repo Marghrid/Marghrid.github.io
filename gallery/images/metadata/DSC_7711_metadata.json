@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "March 09, 2022",
-    "Time": "00:00:57",
+    "date": "March 09, 2022",
+    "time": "00:00:57",
     "camera": "NIKON D7100",
     "aperture": "f/11.0",
     "shutterSpeed": "1/125s",
     "focalLength": "18mm",
     "iso": "100"
-  }
+  },
+  "location": "Wawona, CA, USA",
+  "title": "Sierra National Forest"
 }

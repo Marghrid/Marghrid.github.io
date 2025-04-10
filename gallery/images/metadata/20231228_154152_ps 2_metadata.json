@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "December 28, 2023",
-    "Time": "15:41:53",
+    "date": "December 28, 2023",
+    "time": "15:41:53",
     "camera": "Samsung Galaxy S22 Ultra",
     "aperture": "f/2.4",
     "shutterSpeed": "1/174s",
     "focalLength": "8mm",
     "iso": "50"
-  }
+  },
+  "location": "Camogli, Italy"
 }

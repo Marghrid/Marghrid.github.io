@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "September 01, 2020",
-    "Time": "11:50:24",
+    "date": "September 01, 2020",
+    "time": "11:50:24",
     "camera": "NIKON D7100",
     "aperture": "f/5.0",
     "shutterSpeed": "1/100s",
     "focalLength": "18mm",
     "iso": "100"
-  }
+  },
+  "location": "Ecovia do Rio Vez, Sistelo, Portugal"
 }

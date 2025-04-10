@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "March 05, 2022",
-    "Time": "02:02:28",
+    "date": "March 05, 2022",
+    "time": "02:02:28",
     "camera": "NIKON D7100",
     "aperture": "f/3.5",
     "shutterSpeed": "1/25s",
     "focalLength": "18mm",
     "iso": "100"
-  }
+  },
+  "location": "Sedona, AZ, USA"
 }

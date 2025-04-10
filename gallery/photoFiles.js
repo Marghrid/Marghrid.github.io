@@ -64,7 +64,6 @@ const photoFiles = [
     ["images/previews/DSC_7792_preview.jpg", "images/thumbnails/DSC_7792_thumb.jpg", "images/metadata/DSC_7792_metadata.json"],
     ["images/previews/DSC_7786_preview.jpg", "images/thumbnails/DSC_7786_thumb.jpg", "images/metadata/DSC_7786_metadata.json"],
     ["images/previews/DSC_7762_preview.jpg", "images/thumbnails/DSC_7762_thumb.jpg", "images/metadata/DSC_7762_metadata.json"],
-    ["images/previews/DSC_7743_preview.jpg", "images/thumbnails/DSC_7743_thumb.jpg", "images/metadata/DSC_7743_metadata.json"],
     ["images/previews/DSC_7711_preview.jpg", "images/thumbnails/DSC_7711_thumb.jpg", "images/metadata/DSC_7711_metadata.json"],
     ["images/previews/DSC_7709_preview.jpg", "images/thumbnails/DSC_7709_thumb.jpg", "images/metadata/DSC_7709_metadata.json"],
     ["images/previews/DSC_7542_preview.jpg", "images/thumbnails/DSC_7542_thumb.jpg", "images/metadata/DSC_7542_metadata.json"],

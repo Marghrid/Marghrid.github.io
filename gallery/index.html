@@ -33,18 +33,21 @@
   </section>
 
   <!-- Photo preview. Hidden by default. -->
-  <div id="preview" style="display: none; opacity: 0;">
+  <div id="preview" style="display: none; opacity: 0;" onclick="closePreview()">
+
     <!-- <div id="img-preview"> -->
     <!-- <img id="preview-curr-img" src="" alt="Preview" onclick="" /> -->
     <!-- Image src added with js -->
     <!-- <div id="preview-info"></div> -->
     <!-- Image info added with js -->
     <!-- </div> -->
-    <button id="preview-close" class="preview-button" onclick="closePreview()"><i class="fas fa-xmark"></i></button>
-    <button id="preview-left" class="preview-button" onclick="displayPrevPreview()">
+    <button id="preview-close" class="preview-button" onclick="event.stopPropagation(); closePreview();">
+      <i class="fas fa-xmark"></i>
+    </button>
+    <button id="preview-left" class="preview-button" onclick="displayPrevPreview(); event.stopPropagation();">
       <i class="fas fa-angle-left"></i>
     </button>
-    <button id="preview-right" class="preview-button" onclick="displayNextPreview()">
+    <button id="preview-right" class="preview-button" onclick="displayNextPreview(); event.stopPropagation();">
       <i class="fas fa-angle-right"></i>
     </button>
 

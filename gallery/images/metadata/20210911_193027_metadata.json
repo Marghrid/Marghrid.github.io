@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "September 11, 2021",
-    "Time": "19:30:28",
+    "date": "September 11, 2021",
+    "time": "19:30:28",
     "camera": "Samsung Galaxy Note10+",
     "aperture": "f/2.1",
     "shutterSpeed": "1/100s",
     "focalLength": "6mm",
     "iso": "50"
-  }
+  },
+  "location": "Pittsburgh, PA, USA",
+  "title": "Cathedral of Learning"
 }

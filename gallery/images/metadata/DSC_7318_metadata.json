@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "March 05, 2022",
-    "Time": "20:19:03",
+    "date": "March 05, 2022",
+    "time": "20:19:03",
     "camera": "NIKON D7100",
     "aperture": "f/8.0",
     "shutterSpeed": "1/250s",
     "focalLength": "18mm",
     "iso": "100"
-  }
+  },
+  "location": "Grand Canyon NP, AZ, USA"
 }

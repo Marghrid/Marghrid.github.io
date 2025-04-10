@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "December 31, 2019",
-    "Time": "16:39:41",
+    "date": "December 31, 2019",
+    "time": "16:39:41",
     "camera": "Samsung Galaxy Note10+",
     "aperture": "f/2.1",
     "shutterSpeed": "1/1600s",
     "focalLength": "6mm",
     "iso": "50"
-  }
+  },
+  "location": "Barreiro, Portugal"
 }

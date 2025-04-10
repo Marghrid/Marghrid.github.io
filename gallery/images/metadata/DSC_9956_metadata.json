@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "March 09, 2023",
-    "Time": "17:40:29",
+    "date": "March 09, 2023",
+    "time": "17:40:29",
     "camera": "NIKON D7100",
     "aperture": "f/9.0",
     "shutterSpeed": "1/320s",
     "focalLength": "25mm",
     "iso": "100"
-  }
+  },
+  "location": "Canyonlands NP, UT, USA"
 }

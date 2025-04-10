@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "August 15, 2021",
-    "Time": "13:00:09",
+    "date": "August 15, 2021",
+    "time": "13:00:09",
     "camera": "Samsung Galaxy Note10+",
     "aperture": "f/2.1",
     "shutterSpeed": "1/396s",
     "focalLength": "6mm",
     "iso": "50"
-  }
+  },
+  "location": "Frick Park, Pittsburgh, PA, USA",
+  "title": "Eastern Tiger Swallowtail"
 }

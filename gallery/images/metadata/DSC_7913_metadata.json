@@ -1,11 +1,12 @@
 {
   "fileInfo": {
-    "Date": "August 09, 2020",
-    "Time": "09:32:02",
+    "date": "August 09, 2020",
+    "time": "09:32:02",
     "camera": "NIKON D7100",
     "aperture": "f/5.6",
     "shutterSpeed": "1/200s",
     "focalLength": "200mm",
     "iso": "100"
-  }
+  },
+  "location": "Barreiro, Portugal"
 }

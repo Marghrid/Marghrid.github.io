@@ -1,12 +1,13 @@
 {
   "location": "Shark Valley Trail, Everglades NP, FL, USA",
   "fileInfo": {
-    "Date": "March 24, 2025",
-    "Time": "19:19:04",
+    "date": "March 24, 2025",
+    "time": "19:19:04",
     "camera": "NIKON D7100",
     "aperture": "f/6.3",
     "shutterSpeed": "1/640s",
     "focalLength": "105mm",
     "iso": "200"
-  }
+  },
+  "title": "Great Blue Heron"
 }

@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "October 22, 2022",
-    "Time": "21:37:23",
+    "date": "October 22, 2022",
+    "time": "21:37:23",
     "camera": "NIKON D7100",
     "aperture": "f/8.0",
     "shutterSpeed": "1/250s",
     "focalLength": "26mm",
     "iso": "1250"
-  }
+  },
+  "location": "Congaree NP, SC, USA",
+  "title": "Boardwalk Loop Trail"
 }

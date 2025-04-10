@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "March 13, 2019",
-    "Time": "15:28:15",
+    "date": "March 13, 2019",
+    "time": "15:28:15",
     "camera": "Samsung Galaxy Note8",
     "aperture": "f/1.7",
     "shutterSpeed": "1/33s",
     "focalLength": "4mm",
     "iso": "250"
-  }
+  },
+  "location": "Hamburg, Germany",
+  "title": "Miniatur Wunderland"
 }

@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "October 20, 2022",
-    "Time": "22:22:24",
+    "date": "October 20, 2022",
+    "time": "22:22:24",
     "camera": "NIKON D7100",
     "aperture": "f/8.0",
     "shutterSpeed": "1/250s",
     "focalLength": "32mm",
     "iso": "100"
-  }
+  },
+  "location": "Bryson City, NC, USA",
+  "title": "Nantahala National Forest"
 }

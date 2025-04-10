@@ -1,11 +1,13 @@
 {
   "fileInfo": {
-    "Date": "March 07, 2023",
-    "Time": "08:51:51",
+    "date": "March 07, 2023",
+    "time": "08:51:51",
     "camera": "iPhone 11 Pro Max",
     "aperture": "f/1.8",
     "shutterSpeed": "1/1429s",
     "focalLength": "4mm",
     "iso": "32"
-  }
+  },
+  "location": "Goosenecks Overlook, Capitol Reef NP, UT, USA",
+  "description": "Photo by Ana Teresa Ferreira"
 }
