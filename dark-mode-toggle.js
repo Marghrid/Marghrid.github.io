@@ -3,6 +3,7 @@ function toggleDarkMode() {
   // const isDarkMode = document.body.classList.contains("dark-theme");
   // localStorage.setItem("darkMode", isDarkMode);
 }
+
 if (
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches

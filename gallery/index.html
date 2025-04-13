@@ -2,67 +2,60 @@
 <html lang='en'>
 
 <head>
-  <title>Margarida's Gallery</title>
-  <meta charset='UTF-8'>
-  <meta name='description'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
-  <link rel="stylesheet" href="../assets/fontawesome-5.13.1/css/all.css">
-  <link rel="stylesheet" href="../assets/fontawesome-6.7.2/css/all.css">
-  <link rel="stylesheet" type="text/css" href="../style.css" />
-  <link rel='stylesheet' type='text/css' href='style.css' />
-  <meta name='theme-color' content='#ffffff'>
-  <script src="photoFiles.js"></script>
-  <script src="script.js"></script>
+    <title>Margarida's Gallery</title>
+    <meta charset='UTF-8'>
+    <meta name='description'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
+    <link rel="stylesheet" href="../assets/fontawesome-5.13.1/css/all.css">
+    <link rel="stylesheet" href="../assets/fontawesome-6.7.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel='stylesheet' type='text/css' href='style.css' />
+    <meta name='theme-color' content='#ffffff'>
+    <script src="photoFiles.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
-  <input type="checkbox" id="darkmode-toggle" />
-  <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
-    <i class="fas fa-sun" id="sun"></i>
-    <i class="fas fa-moon" id="moon"></i>
-  </label>
+    <input type="checkbox" id="darkmode-toggle" />
+    <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
+        <i class="fas fa-sun" id="sun"></i>
+        <i class="fas fa-moon" id="moon"></i>
+    </label>
 
-  <section id="photo-gallery">
-    <div id="header">
-      <h1>Margarida's Photo Gallery</h1>
+    <section id="photo-gallery">
+        <div id="header">
+            <h1>Margarida's Photo Gallery</h1>
+        </div>
+        <div id="gallery-photos" class="gallery">
+            <!-- Elements added with js -->
+        </div>
+    </section>
+
+    <!-- Photo preview. Hidden by default. -->
+    <div id="preview" style="display: none; opacity: 0;" onclick="closePreview()">
+        <button id="preview-close" class="preview-button" onclick="event.stopPropagation(); closePreview();">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <button id="preview-left" class="preview-button" onclick="displayPrevPreview(); event.stopPropagation();">
+            <i class="fas fa-angle-left"></i>
+        </button>
+        <button id="preview-right" class="preview-button" onclick="displayNextPreview(); event.stopPropagation();">
+            <i class="fas fa-angle-right"></i>
+        </button>
+
+
     </div>
-    <div id="gallery-photos" class="gallery">
-      <!-- Elements added with js -->
-    </div>
-  </section>
 
-  <!-- Photo preview. Hidden by default. -->
-  <div id="preview" style="display: none; opacity: 0;" onclick="closePreview()">
-
-    <!-- <div id="img-preview"> -->
-    <!-- <img id="preview-curr-img" src="" alt="Preview" onclick="" /> -->
-    <!-- Image src added with js -->
-    <!-- <div id="preview-info"></div> -->
-    <!-- Image info added with js -->
-    <!-- </div> -->
-    <button id="preview-close" class="preview-button" onclick="event.stopPropagation(); closePreview();">
-      <i class="fas fa-xmark"></i>
-    </button>
-    <button id="preview-left" class="preview-button" onclick="displayPrevPreview(); event.stopPropagation();">
-      <i class="fas fa-angle-left"></i>
-    </button>
-    <button id="preview-right" class="preview-button" onclick="displayNextPreview(); event.stopPropagation();">
-      <i class="fas fa-angle-right"></i>
-    </button>
-
-
-  </div>
-
-  <footer>
-    <p id="copyright">Copyright &copy; Margarida Ferreira, 2025</p>
-    <ul class='icons'>
-      <li><a href='https://marghrid.github.io' class='fas fa-home'></a></li>
-      <li><a href='https://www.instagram.com/marghrid/' class='fab fa-instagram'></a></li>
-      <li><a href='https://github.com/marghrid' class='fab fa-github'></a></li>
-      <li><a href='https://linkedin.com/in/marghrid' class='fab fa-linkedin'></a></li>
-    </ul>
-  </footer>
+    <footer>
+        <p id="copyright">Copyright &copy; Margarida Ferreira, 2025</p>
+        <ul class='icons'>
+            <li><a href='https://marghrid.github.io' class='fas fa-home'></a></li>
+            <li><a href='https://www.instagram.com/marghrid/' class='fab fa-instagram'></a></li>
+            <li><a href='https://github.com/marghrid' class='fab fa-github'></a></li>
+            <li><a href='https://linkedin.com/in/marghrid' class='fab fa-linkedin'></a></li>
+        </ul>
+    </footer>
 </body>
 
 <script src="../dark-mode-toggle.js"></script>

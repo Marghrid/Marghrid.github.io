@@ -1,23 +1,117 @@
 // Saves the index of the currently displayed photo
-currentPhotoIndex = 0;
+currentPreviewPhotoIndex = 0;
 
-// Load images into main gallery
-function loadImages() {
-  photoFiles.forEach(([image_src, thumbnail_src, metadata_src]) => {
-    // Each photo in the gallery is a div with a background image, to make them square.
-    const img = document.createElement("div");
-    img.style.background = "url('" + thumbnail_src + "')";
-    img.style.backgroundSize = "cover";
-    img.style.backgroundPosition = "center";
+// Last loaded photo index
+lastLoadedPhotoIndex = 0;
 
-    img.onclick = function () {
-      openPreview(image_src, metadata_src);
-    };
-    img.classList.add("photo-thumbnail");
+function loadNewImages() {
+  const gallery = document.getElementById("gallery-photos");
+  const previousLoadedPhotoIndex = lastLoadedPhotoIndex;
+  lastLoadedPhotoIndex += 60; // Load 60 at a time
+  photoFiles
+    .slice(previousLoadedPhotoIndex, lastLoadedPhotoIndex)
+    .forEach(([image_src, thumbnail_src, metadata_src]) => {
+      // Each photo in the gallery is a div with a background image, to make them square.
+      const img = document.createElement("div");
+      img.style.background = "url('" + thumbnail_src + "')";
+      img.style.backgroundSize = "cover";
+      img.style.backgroundPosition = "center";
 
-    const gallery = document.getElementById("gallery-photos");
-    gallery.appendChild(img);
+      img.onclick = function () {
+        openPreview(image_src, metadata_src);
+      };
+      img.classList.add("photo-thumbnail");
+
+      gallery.appendChild(img);
+    });
+
+  openPreviewFromURL();
+
+  window.addEventListener("popstate", function () {
+    openPreviewFromURL();
   });
+  window.addEventListener("pushstate", function () {
+    openPreviewFromURL();
+  });
+
+  window.addEventListener("scroll", function () {
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 100
+    ) {
+      loadNewImages();
+    }
+  });
+}
+
+function populateMetadataDiv(meta_src) {
+  const metadata = JSON.parse(meta_src);
+  // console.log(metadata);
+  const info = document.getElementById("preview-info");
+  info.innerHTML = "";
+  if (metadata.title) {
+    let h2 = document.createElement("h2");
+    h2.innerHTML = metadata.title;
+    info.appendChild(h2);
+    const currImg = document.getElementById("preview-curr-img");
+    currImg.alt = "Preview of " + metadata.title;
+  }
+
+  if (metadata.description) {
+    let p = document.createElement("p");
+    p.classList.add("photo-description");
+    let em = document.createElement("em");
+    em.innerHTML = metadata.description;
+    p.appendChild(em);
+    info.appendChild(p);
+  }
+
+  if (metadata.location) {
+    let p = document.createElement("p");
+    let i = document.createElement("i");
+    i.classList.add("fas", "fa-location-dot");
+    p.appendChild(i);
+    p.innerHTML += "&nbsp" + metadata.location;
+    info.appendChild(p);
+  }
+
+  if (metadata.fileInfo) {
+    // console.log(metadata.fileInfo);
+    if (metadata.fileInfo.date) {
+      let p = document.createElement("p");
+      let i = document.createElement("i");
+      i.classList.add("fa-solid", "fa-calendar-days");
+      p.appendChild(i);
+      p.innerHTML += "&nbsp" + metadata.fileInfo.date;
+      info.appendChild(p);
+    }
+
+    let more_info = [];
+    if (metadata.fileInfo.camera) {
+      more_info.push(metadata.fileInfo.camera);
+    }
+    if (metadata.fileInfo.aperture) {
+      more_info.push(metadata.fileInfo.aperture);
+    }
+    if (metadata.fileInfo.shutterSpeed) {
+      more_info.push(metadata.fileInfo.shutterSpeed);
+    }
+    if (metadata.fileInfo.focalLength) {
+      more_info.push(metadata.fileInfo.focalLength);
+    }
+    if (metadata.fileInfo.iso) {
+      more_info.push("ISO&nbsp" + metadata.fileInfo.iso);
+    }
+
+    if (more_info.length > 0) {
+      let p = document.createElement("p");
+      let i = document.createElement("i");
+      i.classList.add("fas", "fa-camera");
+      p.appendChild(i);
+      p.innerHTML += "&nbsp" + more_info.join(", ");
+      info.appendChild(p);
+    }
+  }
 }
 
 function loadMetadata(src) {
@@ -27,76 +121,10 @@ function loadMetadata(src) {
   request.send();
 
   request.onload = function () {
-    if (request.status == 200) {
-      const metadata = JSON.parse(request.responseText);
-      // console.log(metadata);
-      const info = document.getElementById("preview-info");
-      info.innerHTML = "";
-      if (metadata.title) {
-        let h2 = document.createElement("h2");
-        h2.innerHTML = metadata.title;
-        info.appendChild(h2);
-        const currImg = document.getElementById("preview-curr-img");
-        currImg.alt = "Preview of " + metadata.title;
-      }
-
-      if (metadata.description) {
-        let p = document.createElement("p");
-        p.classList.add("photo-description");
-        let em = document.createElement("em");
-        em.innerHTML = metadata.description;
-        p.appendChild(em);
-        info.appendChild(p);
-      }
-
-      if (metadata.location) {
-        let p = document.createElement("p");
-        let i = document.createElement("i");
-        i.classList.add("fas", "fa-location-dot");
-        p.appendChild(i);
-        p.innerHTML += "&nbsp" + metadata.location;
-        info.appendChild(p);
-      }
-
-      if (metadata.fileInfo) {
-        console.log(metadata.fileInfo);
-        if (metadata.fileInfo.date) {
-          let p = document.createElement("p");
-          let i = document.createElement("i");
-          i.classList.add("fa-solid", "fa-calendar-days");
-          p.appendChild(i);
-          p.innerHTML += "&nbsp" + metadata.fileInfo.date;
-          info.appendChild(p);
-        }
-
-        let more_info = [];
-        if (metadata.fileInfo.camera) {
-          more_info.push(metadata.fileInfo.camera);
-        }
-        if (metadata.fileInfo.aperture) {
-          more_info.push(metadata.fileInfo.aperture);
-        }
-        if (metadata.fileInfo.shutterSpeed) {
-          more_info.push(metadata.fileInfo.shutterSpeed);
-        }
-        if (metadata.fileInfo.focalLength) {
-          more_info.push(metadata.fileInfo.focalLength);
-        }
-        if (metadata.fileInfo.iso) {
-          more_info.push("ISO&nbsp" + metadata.fileInfo.iso);
-        }
-
-        if (more_info.length > 0) {
-          let p = document.createElement("p");
-          let i = document.createElement("i");
-          i.classList.add("fas", "fa-camera");
-          p.appendChild(i);
-          p.innerHTML += "&nbsp" + more_info.join(", ");
-          info.appendChild(p);
-        }
-      }
+    if (request.status === 200) {
+      populateMetadataDiv(request.responseText);
     } else {
-      console.error("Failed to load metadata from " + src);
+      console.log("Error loading metadata: " + request.status);
     }
   };
 }
@@ -145,6 +173,21 @@ function checkDirection() {
   }
 }
 
+function updateURL(image_src) {
+  const url = new URL(window.location);
+  url.searchParams.set(
+    "img",
+    image_src.replace("images/previews/", "").replace("_preview.jpg", "")
+  );
+  window.history.pushState({}, "", url);
+}
+
+function clearURL() {
+  const url = new URL(window.location);
+  url.searchParams.delete("img");
+  window.history.pushState({}, "", url);
+}
+
 function displayPrevPreview() {
   const preview = document.getElementById("preview");
   const oldImgPreview = document.getElementById("img-preview");
@@ -157,7 +200,7 @@ function displayPrevPreview() {
 
   // compute the next image index
   const nextIndex =
-    (currentPhotoIndex - 1 + photoFiles.length) % photoFiles.length;
+    (currentPreviewPhotoIndex - 1 + photoFiles.length) % photoFiles.length;
   const previewImg = createPreviewImg(
     photoFiles[nextIndex][0],
     photoFiles[nextIndex][2]
@@ -170,7 +213,8 @@ function displayPrevPreview() {
     previewImg.classList.remove("enter-left");
   }, 290);
 
-  currentPhotoIndex = nextIndex;
+  currentPreviewPhotoIndex = nextIndex;
+  updateURL(photoFiles[nextIndex][0]);
 }
 
 function displayNextPreview() {
@@ -184,7 +228,7 @@ function displayNextPreview() {
   }, 290);
 
   // compute the next image index
-  const nextIndex = (currentPhotoIndex + 1) % photoFiles.length;
+  const nextIndex = (currentPreviewPhotoIndex + 1) % photoFiles.length;
   const previewImg = createPreviewImg(
     photoFiles[nextIndex][0],
     photoFiles[nextIndex][2]
@@ -197,14 +241,18 @@ function displayNextPreview() {
     previewImg.classList.remove("enter-right");
   }, 290);
 
-  currentPhotoIndex = nextIndex;
+  currentPreviewPhotoIndex = nextIndex;
+
+  updateURL(photoFiles[nextIndex][0]);
 }
 
 function closePreview() {
   const preview = document.getElementById("preview");
   // Remove image preview
   const previewImg = document.getElementById("img-preview");
-  preview.removeChild(previewImg);
+  if (previewImg) {
+    preview.removeChild(previewImg);
+  }
 
   // Disable event listeners
   window.removeEventListener("keydown", previewKeyHandler);
@@ -219,24 +267,49 @@ function closePreview() {
   window.setTimeout(function removethis() {
     preview.style.display = "none";
   }, 290);
+
+  clearURL();
 }
 
 function openPreview(image_src, metadata_src) {
   // open preview
+  const old_preview = document.getElementById("img-preview");
+  if (old_preview) {
+    document.getElementById("preview").removeChild(old_preview);
+  }
   const previewImg = createPreviewImg(image_src, metadata_src);
   const preview = document.getElementById("preview");
   preview.insertBefore(previewImg, preview.firstChild);
+  // Show preview softly
+  preview.style.opacity = "0";
   preview.style.display = "block";
-  preview.style.opacity = "1";
+
+  window.setTimeout(function addthis() {
+    preview.style.opacity = "1";
+  }, 1);
 
   // Disable scrolling in body
   document.body.classList.add("no-scroll");
 
   // Set current phot index and enable event listeners
-  currentPhotoIndex = photoFiles.findIndex((i) => i[0] == image_src);
+  currentPreviewPhotoIndex = photoFiles.findIndex((i) => i[0] == image_src);
   window.addEventListener("keydown", previewKeyHandler);
   document.addEventListener("touchstart", previewTouchStartHandler);
   document.addEventListener("touchend", previewTouchEndHandler);
+
+  updateURL(image_src);
+}
+
+function openPreviewFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (!urlParams.get("img")) {
+    closePreview();
+    return; // no image to preview
+  }
+  // This may fail if naming convention is not followed
+  const image_src = "images/previews/" + urlParams.get("img") + "_preview.jpg";
+  const meta_src = "images/metadata/" + urlParams.get("img") + "_metadata.json";
+  openPreview(image_src, meta_src);
 }
 
 // Creates the img-preview div populated with the image and metadata
@@ -263,4 +336,4 @@ function createPreviewImg(image_src, metadata_src) {
 }
 
 // Load gallery view on page load
-window.onload = loadImages;
+window.onload = loadNewImages;

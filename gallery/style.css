@@ -1,270 +1,269 @@
 /* Redefine the default styles for the photo gallery page */
 @media (orientation: landscape) {
-	body {
-		max-width: 100%;
-	}
+    body {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 768px) {
-	body {
-		width: 100%;
-	}
+    body {
+        width: 100%;
+    }
 
-	#photo-gallery {
-		width: 90%;
-		margin: auto;
-	}
+    #photo-gallery {
+        width: 90%;
+        margin: auto;
+    }
 }
 
 section {
-	border-bottom: .2ex solid rgba(0, 50, 70, .4);
-	padding-bottom: 2ex;
+    border-bottom: .2ex solid rgba(0, 50, 70, .4);
+    padding-bottom: 2ex;
 }
 
 .no-scroll {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 #photo-gallery h1 {
-	text-align: center;
-	font-size: 140%;
+    text-align: center;
+    font-size: 140%;
 }
 
 .gallery {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .photo-thumbnail {
-	/*order, background, background size, and background position set in js*/
-	min-width: 1.9in;
-	width: 17vw;
-	aspect-ratio: 1 / 1;
-	margin: .25%;
-	cursor: pointer;
+    /*order, background, background size, and background position set in js*/
+    width: clamp(1.9in, 17vw, 18rem);
+    aspect-ratio: 1 / 1;
+    margin: .25%;
+    cursor: pointer;
 
-	/* make unselectable */
-	user-select: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-o-user-select: none;
-	/* For iOS */
-	-webkit-tap-highlight-color: transparent;
-	/* For Android */
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	/* To remove focus outline */
-	outline: none;
+    /* make unselectable */
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    /* For iOS */
+    -webkit-tap-highlight-color: transparent;
+    /* For Android */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* To remove focus outline */
+    outline: none;
 }
 
 @keyframes leaving-left {
-	0% {
-		transform: translateX(0);
-	}
+    0% {
+        transform: translateX(0);
+    }
 
-	100% {
-		transform: translateX(-100%);
-	}
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes leaving-right {
-	0% {
-		transform: translateX(0);
-	}
+    0% {
+        transform: translateX(0);
+    }
 
-	100% {
-		transform: translateX(100%);
-	}
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 @keyframes entering-left {
-	0% {
-		transform: translateX(-100%);
-	}
+    0% {
+        transform: translateX(-100%);
+    }
 
-	100% {
-		transform: translateX(0);
-	}
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @keyframes entering-right {
-	0% {
-		transform: translateX(100%);
-	}
+    0% {
+        transform: translateX(100%);
+    }
 
-	100% {
-		transform: translateX(0);
-	}
+    100% {
+        transform: translateX(0);
+    }
 }
 
 #preview {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(20, 20, 20, 0.8);
-	text-align: center;
-	transition: all .3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.8);
+    text-align: center;
+    transition: opacity .3s;
 }
 
 .leave-left {
-	animation: leaving-left .3s ease-in-out;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: all .3s;
+    animation: leaving-left .3s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all .3s;
 }
 
 .leave-right {
-	animation: leaving-right .3s ease-in-out;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: all .3s;
+    animation: leaving-right .3s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all .3s;
 }
 
 .enter-right {
-	animation: entering-right .3s ease-in-out;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: all .3s;
+    animation: entering-right .3s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all .3s;
 }
 
 .enter-left {
-	animation: entering-left .3s ease-in-out;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition: all .3s;
+    animation: entering-left .3s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all .3s;
 }
 
 
 #preview-curr-img {
-	max-width: 100%;
-	max-height: 100%;
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-	/* make unselectable */
-	user-select: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-o-user-select: none;
-	/* For iOS */
-	-webkit-tap-highlight-color: transparent;
-	/* For Android */
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	/* To remove focus outline */
-	outline: none;
+    /* make unselectable */
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    /* For iOS */
+    -webkit-tap-highlight-color: transparent;
+    /* For Android */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* To remove focus outline */
+    outline: none;
 }
 
 #preview-info {
-	position: absolute;
-	top: 100%;
-	right: 0;
-	padding: 1em;
-	transform: translateY(-100%);
-	font-size: 90%;
-	text-align: left;
-	background-color: rgba(20, 20, 20, 0.6);
-	color: rgba(255, 255, 255, 0.8);
-	min-width: 14em;
-	max-width: 25%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1em;
+    transform: translateY(-100%);
+    font-size: 90%;
+    text-align: left;
+    background-color: rgba(20, 20, 20, 0.6);
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 14em;
+    max-width: 25%;
 
-	td,
-	p {
-		margin: 0;
-		padding: 0;
-		line-height: 1.3em;
-	}
+    td,
+    p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.3em;
+    }
 
-	i {
-		font-size: 90%;
-	}
+    i {
+        font-size: 90%;
+    }
 
-	.key {
-		text-align: right;
-	}
+    .key {
+        text-align: right;
+    }
 
-	h2 {
-		margin: 0;
-		font-weight: normal;
-		font-size: 125%;
-	}
+    h2 {
+        margin: 0;
+        font-weight: normal;
+        font-size: 125%;
+    }
 }
 
 .preview-button {
-	padding: 1.25%;
-	background-color: rgba(20, 20, 20, 0.4);
-	border: 0;
-	color: rgba(255, 255, 255, 0.8);
-	min-width: .5in;
-	min-height: .5in;
-	font-size: 175%;
-	text-decoration: none;
-	cursor: pointer;
+    padding: 1.25%;
+    background-color: rgba(20, 20, 20, 0.4);
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+    min-width: .5in;
+    min-height: .5in;
+    font-size: 175%;
+    text-decoration: none;
+    cursor: pointer;
 
-	/* make unselectable */
-	user-select: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-o-user-select: none;
-	/* For iOS */
-	-webkit-tap-highlight-color: transparent;
-	/* For Android */
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	/* To remove focus outline */
-	outline: none;
+    /* make unselectable */
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    /* For iOS */
+    -webkit-tap-highlight-color: transparent;
+    /* For Android */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* To remove focus outline */
+    outline: none;
 }
 
 .preview-button:hover {
-	color: rgba(255, 255, 255, 1);
-	background-color: rgba(20, 20, 20, 0.6);
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(20, 20, 20, 0.6);
 }
 
 #preview-close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 175%;
-	border-radius: 30%;
-	aspect-ratio: 1 / 1;
-	padding: .5em .7em .7em .7em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 175%;
+    border-radius: 30%;
+    aspect-ratio: 1 / 1;
+    padding: .5em .7em .7em .7em;
 }
 
 #preview-left {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translateY(-50%);
-	border-radius: 40px 25px 25px 40px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 40px 25px 25px 40px;
 }
 
 #preview-right {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	transform: translateY(-50%);
-	border-radius: 25px 40px 40px 25px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 25px 40px 40px 25px;
 }
 
 body.dark-theme {
-	#photo-gallery #header {
-		border-bottom-color: rgba(255, 255, 255, 0.3);
-	}
+    #photo-gallery #header {
+        border-bottom-color: rgba(255, 255, 255, 0.3);
+    }
 }
