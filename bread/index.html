@@ -39,9 +39,7 @@
 
       <!-- Leaven amount: -->
       <label for='leavenIn'>Leaven:</label>
-      <input type='number' min=0 id='leavenIn' name='leavenIn'
-        oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-        value=200>g
+      <input type='number' min=0 id='leavenIn' name='leavenIn' oninput='handleDecimalInput(this)' value=200>g
       <span id="leavenTotalWarning" style='display: none; margin-left: 1em;' class='warning'>
         <i class="fas fa-exclamation-triangle"></i><span id='leavenTotalWarningText' class='ingredientAmount'>??</span>
       </span>
@@ -50,53 +48,45 @@
       <a href='#' onclick='showLeavenAdvanced(this)' id='showAdvancedOptions'>Show leaven composition</a>
       <div id='advancedLeavenOptions' style='display: none;' class="advancedOptions">
         <label for='leavenWater'>Water in leaven:</label>
-        <input type='number' min=0 id='leavenWater' name='leavenWater'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=80>g<br>
+        <input type='number' min=0 id='leavenWater' name='leavenWater' oninput='handleDecimalInput(this)' value=80>g<br>
 
         <label for='leavenAP'>Flour in leaven:</label>
-        <input type='number' min=0 id='leavenAP' name='leavenAP'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=80>g<br>
+        <input type='number' min=0 id='leavenAP' name='leavenAP' oninput='handleDecimalInput(this)' value=80>g<br>
 
         <label for='leavenStarter'>Starter in leaven:</label>
-        <input type='number' min=0 id='leavenStarter' name='leavenStarter'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=65>g
+        <input type='number' min=0 id='leavenStarter' name='leavenStarter' oninput='handleDecimalInput(this)' value=65>g
         <span id="leavenCompWarning" style='display: none; margin-left: 1em;' class='warning'>
           <i class="fas fa-exclamation-triangle"></i><span id='leavenCompWarningText' class='ingredientAmount'>??</span>
         </span><br>
 
         <label for='starterHydration'>Starter hydration:</label>
-        <input type='number' min=0 id='starterHydration' name='starterHydration'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
+        <input type='number' min=0 id='starterHydration' name='starterHydration' oninput='handleDecimalInput(this)'
           value=50>%<br>
       </div><br>
 
       <!-- Total bread weight: -->
 
       <label for='total'>Total bread weight:</label>
-      <input type='number' min=0 step="50" id='total' name='total'
-        oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-        value=1200>g<br>
+      <input type='number' min=0 step="50" id='total' name='total' oninput='handleDecimalInput(this)' value=1200>g<br>
 
       <!-- Advanced bread options: -->
 
       <a href='#' onclick='showBreadAdvanced(this)' id='showAdvancedOptions'>Show bread options</a>
       <div id='advancedBreadOptions' style='display: none;' class="advancedOptions">
         <label for='hydration'>Hydration:</label>
-        <input type='number' min=0 id='hydration' name='hydration'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=80>%<br>
+        <input type='number' min=0 id='hydration' name='hydration' oninput='handleDecimalInput(this)' value=80>%<br>
 
         <label for='wwRatio'>Ratio of WW:</label>
-        <input type='number' min=0 id='wwRatio' name='wwRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=15>%<br>
+        <input type='number' min=0 id='wwRatio' name='wwRatio' oninput='handleDecimalInput(this)' value=15>%
+        <span id="wwRatioWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='wwRatioWarningText' class='ingredientAmount'>??</span>
+        </span><br>
         <label for='saltRatio'>Ratio of salt:</label>
-        <input type='number' min=0 step=0.1 id='saltRatio' name='saltRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=2.5>%<br>
+        <input type='number' min=0 step=0.1 id='saltRatio' name='saltRatio' oninput='handleDecimalInput(this)'
+          value=2.5>%
+        <span id="saltRatioWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='saltRatioWarningText' class='ingredientAmount'>??</span>
+        </span><br>
       </div>
 
     </form>

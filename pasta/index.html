@@ -38,9 +38,7 @@
     <form onsubmit='return false;'>
 
       <label for='eggsWeight'>Eggs weight (with shell):</label>
-      <input type='number' min=0 id='eggsWeight' name='eggsWeight'
-        oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-        value=125>g<br>
+      <input type='number' min=0 id='eggsWeight' name='eggsWeight' oninput='handleDecimalInput(this)' value=125>g<br>
 
       <!-- Advanced pasta options: -->
 
@@ -48,13 +46,15 @@
       <div id='advancedPastaOptions' style='display: none;' class="advancedOptions">
         <label for='flourWeightRatio'>Total flour to egg weight ratio:</label>
         <input type='number' min=0 step=0.1 id='flourWeightRatio' name='flourWeightRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=1.43><br>
+          oninput='handleDecimalInput(this)' value=1.43><br>
 
         <label for='semolinaWeightRatio'>Semolina to total flour weight ratio:</label>
         <input type='number' min=0 step=5 id='semolinaWeightRatio' name='semolinaWeightRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=20>%<br>
+          oninput='handleDecimalInput(this)' value=20>%
+        <span id="semolinaWeightRatioWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='semolinaWeightRatioWarningText'
+            class='ingredientAmount'>??</span>
+        </span><br>
       </div>
 
     </form>

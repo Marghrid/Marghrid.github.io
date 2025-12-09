@@ -72,6 +72,15 @@ function computeAmounts(
     leavenTotalWarning = "";
   }
 
+  let saltRatioPercent = saltRatio * 100;
+  if (saltRatioPercent < 1) {
+    saltRatioWarning = saltRatioPercent.toFixed(1) + "% is very little salt!";
+  } else if (saltRatioPercent > 4.9) {
+    saltRatioWarning = saltRatioPercent.toFixed(1) + "% salt is very salty!";
+  } else {
+    saltRatioWarning = "";
+  }
+
   // console.log(
   //   "Computing amounts for",
   //   leavenUsed,
@@ -135,6 +144,16 @@ function computeAmounts(
   let finalWater = totalDesiredWater - totalWaterInLeavenUsed;
   let finalAp = totalDesiredApFlour - totalFlourInLeavenUsed;
 
+  let wwRatioPercent = wwRatio * 100;
+  if (wwRatioPercent > 100) {
+    wwRatioWarning = "WW ratio cannot be " + wwRatioPercent + "%.";
+  } else if (finalAp < 0) {
+    wwRatioWarning = "The ratio of WW flour (" + wwRatioPercent + "%) is too high to account for the AP flour in the leaven.";
+  }
+  else {
+    wwRatioWarning = "";
+  }
+
   // console.log(
   //   "flour",
   //   finalWw,
@@ -184,7 +203,9 @@ function computeAmounts(
     finalWater,
     finalSalt,
     leavenTotalWarning,
-    leavenCompWarning
+    leavenCompWarning,
+    saltRatioWarning,
+    wwRatioWarning
   );
 }
 
@@ -195,7 +216,9 @@ function updateAmounts(
   remainingWater,
   salt,
   leavenTotalWarning,
-  leavenCompWarning
+  leavenCompWarning,
+  saltRatioWarning,
+  wwRatioWarning
 ) {
   document.getElementById("leavenOut").innerHTML = leaven;
   document.getElementById("apFlour").innerHTML = apFlour;
@@ -218,6 +241,94 @@ function updateAmounts(
   } else {
     document.getElementById("leavenCompWarning").style.display = "none";
   }
+
+  if (saltRatioWarning) {
+    document.getElementById("saltRatioWarning").style.display = "";
+    document.getElementById("saltRatioWarningText").innerHTML =
+      saltRatioWarning;
+  } else {
+    document.getElementById("saltRatioWarning").style.display = "none";
+  }
+
+  if (wwRatioWarning) {
+    document.getElementById("wwRatioWarning").style.display = "";
+    document.getElementById("wwRatioWarningText").innerHTML =
+      wwRatioWarning;
+  } else {
+    document.getElementById("wwRatioWarning").style.display = "none";
+  }
 }
+
+
+function handleDecimalInput(el) {
+  var raw = el.value;
+  if (raw === "") { submitForm(); return; }
+  var start = typeof el.selectionStart === 'number' ? el.selectionStart : null;
+  // normalize comma to dot and remove leading minus
+  var norm = raw.replace(/,/g, ".");
+  if (norm.charAt(0) === "-") norm = norm.slice(1);
+
+  // allow only digits and at most one dot (including a trailing dot while typing)
+  if (!/^[0-9]*\.?[0-9]*$/.test(norm)) {
+    el.value = "";
+    submitForm();
+    return;
+  }
+
+  // single dot -> treat as 0.
+  if (norm === ".") {
+    el.value = "0.";
+    try { el.setSelectionRange(2, 2); } catch (e) { }
+    submitForm();
+    return;
+  }
+
+  // keep a trailing dot while the user is typing (e.g. "0.")
+  if (norm.charAt(norm.length - 1) === ".") {
+    if (norm.length === 1) el.value = "0.";
+    else el.value = norm;
+    try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) { }
+    submitForm();
+    return;
+  }
+
+  if (norm === "") { el.value = ""; submitForm(); return; }
+
+  var v = parseFloat(norm);
+  if (isNaN(v)) {
+    el.value = "";
+    submitForm();
+    return;
+  }
+
+  var newVal = String(Math.abs(v));
+  if (el.value !== newVal) {
+    el.value = newVal;
+    try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) { }
+  }
+  submitForm();
+}
+
+function handleIntegerInput(el) {
+  var raw = el.value;
+  if (raw === "") { submitForm(); return; }
+  // preserve caret position if possible
+  var start = typeof el.selectionStart === 'number' ? el.selectionStart : null;
+  // strip any non-digit characters (no dots allowed)
+  var norm = raw.replace(/[^0-9]/g, "");
+
+  if (norm === "") { el.value = ""; submitForm(); return; }
+
+  var v = parseInt(norm, 10);
+  if (isNaN(v)) { el.value = ""; submitForm(); return; }
+
+  var newVal = String(Math.abs(v));
+  if (el.value !== newVal) {
+    el.value = newVal;
+    try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) { }
+  }
+  submitForm();
+}
+
 
 window.onload = submitForm;

@@ -40,32 +40,25 @@
       <!-- Total focaccia weight: -->
 
       <label for='total'>Peso totale dell'impasto:</label>
-      <input type='number' min=0 step="50" id='total' name='total'
-        oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-        value=1000>g<br>
+      <input type='number' min=0 step="50" id='total' name='total' oninput='handleDecimalInput(this)' value=1000>g<br>
 
       <!-- Advanced focaccia options: -->
 
       <a href='#' onclick='showFocacciaAdvanced(this)' id='showAdvancedOptions'>Mostra opzioni avanzate</a>
       <div id='advancedFocacciaOptions' style='display: none;' class="advancedOptions">
         <label for='hydration'>Idratazione:</label>
-        <input type='number' min=0 id='hydration' name='hydration'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
-          value=70>%<br>
+        <input type='number' min=0 id='hydration' name='hydration' oninput='handleDecimalInput(this)' value=70>%<br>
 
         <label for='oliveOilRatio'>Rapporto olio d'oliva:</label>
-        <input type='number' min=0 id='oliveOilRatio' name='oliveOilRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
+        <input type='number' min=0 id='oliveOilRatio' name='oliveOilRatio' oninput='handleDecimalInput(this)'
           value=10>%<br>
 
         <label for='saltRatio'>Rapporto sale:</label>
-        <input type='number' min=0 step=0.1 id='saltRatio' name='saltRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
+        <input type='number' min=0 step=0.1 id='saltRatio' name='saltRatio' oninput='handleDecimalInput(this)'
           value=2>%<br>
 
         <label for='yeastRatio'>Rapporto lievito:</label>
-        <input type='number' min=0 step=0.01 id='yeastRatio' name='yeastRatio'
-          oninput='this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null; submitForm()'
+        <input type='number' min=0 step=0.01 id='yeastRatio' name='yeastRatio' oninput='handleDecimalInput(this)'
           value=0.75>%<br>
       </div>
 

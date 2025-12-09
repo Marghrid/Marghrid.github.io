@@ -88,4 +88,54 @@ function updateAmounts(
   document.getElementById("yeast").innerHTML = yeast;
 }
 
+
+function handleDecimalInput(el) {
+  var raw = el.value;
+  if (raw === "") { submitForm(); return; }
+  var start = typeof el.selectionStart === 'number' ? el.selectionStart : null;
+  // normalize comma to dot and remove leading minus
+  var norm = raw.replace(/,/g, ".");
+  if (norm.charAt(0) === "-") norm = norm.slice(1);
+
+  // allow only digits and at most one dot (including a trailing dot while typing)
+  if (!/^[0-9]*\.?[0-9]*$/.test(norm)) {
+    el.value = "";
+    submitForm();
+    return;
+  }
+
+  // single dot -> treat as 0.
+  if (norm === ".") {
+    el.value = "0.";
+    try { el.setSelectionRange(2, 2); } catch (e) { }
+    submitForm();
+    return;
+  }
+
+  // keep a trailing dot while the user is typing (e.g. "0.")
+  if (norm.charAt(norm.length - 1) === ".") {
+    if (norm.length === 1) el.value = "0.";
+    else el.value = norm;
+    try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) { }
+    submitForm();
+    return;
+  }
+
+  if (norm === "") { el.value = ""; submitForm(); return; }
+
+  var v = parseFloat(norm);
+  if (isNaN(v)) {
+    el.value = "";
+    submitForm();
+    return;
+  }
+
+  var newVal = String(Math.abs(v));
+  if (el.value !== newVal) {
+    el.value = newVal;
+    try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) { }
+  }
+  submitForm();
+}
+
 window.onload = submitForm;
