@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Ricetta de focaccia</title>
+  <meta charset='UTF-8'>
+  <meta name='description'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
+  <link rel="stylesheet" href="../assets/fontawesome-5.13.1/css/all.css">
+  <link rel="stylesheet" href="../assets/fontawesome-6.7.2/css/all.css">
+  <link rel='stylesheet' type='text/css' href='../style.css' />
+  <link rel='stylesheet' type='text/css' href='style.css' />
+  <meta name='theme-color' content='#ffffff'>
+  <script src="script.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKEB9CVTZX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HKEB9CVTZX');
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" id="darkmode-toggle" />
+  <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
+    <i class="fas fa-sun" id="sun"></i>
+    <i class="fas fa-moon" id="moon"></i>
+  </label>
+
+  <h1> Ricetta Focaccia </h1>
+  <section class="ingredients">
+    <h2>Ingredienti:</h2>
+    <h3>Regola il peso desiderato del impasto:</h3>
+    <form onsubmit='return false;'>
+
+      <!-- Total focaccia weight: -->
+
+      <label for='total'>Total focaccia weight:</label>
+      <input type='number' id='total' name='total' oninput='submitForm()' value=1000>g<br>
+
+      <!-- Advanced focaccia options: -->
+
+      <a href='#' onclick='showFocacciaAdvanced(this)' id='showAdvancedOptions'>Mostra opzioni avanzate</a>
+      <div id='advancedFocacciaOptions' style='display: none;' class="advancedOptions">
+        <label for='hydration'>Idratazione:</label>
+        <input type='number' id='hydration' name='hydration' oninput='submitForm()' value=70>%<br>
+
+        <label for='oliveOilRatio'>Rapporto olio d'oliva:</label>
+        <input type='number' id='oliveOilRatio' name='oliveOilRatio' oninput='submitForm()' value=10>%<br>
+
+        <label for='saltRatio'>Rapporto sale:</label>
+        <input type='number' id='saltRatio' name='saltRatio' oninput='submitForm()' value=2>%<br>
+
+        <label for='yeastRatio'>Rapporto lievito:</label>
+        <input type='number' id='yeastRatio' name='yeastRatio' oninput='submitForm()' value=0.75>%<br>
+      </div>
+
+    </form>
+
+    <h3>Ingridienti computati per l'impasto:</h3>
+    <ul>
+      <li><span id='apFlour' class='ingredientAmount'>??</span>g farina (11.7% proteine)</li>
+      <li><span id='yeast' class='ingredientAmount'>??</span>g lievito di birra essiccato</li>
+      <li><span id='oliveOil' class='ingredientAmount'>??</span>g olio d'oliva</li>
+      <li><span id='water' class='ingredientAmount'>??</span>g acqua</li>
+      <li><span id='salt' class='ingredientAmount'>??</span>g sale</li>
+    </ul>
+  </section>
+
+  <section class='recipe'>
+    <h2>Steps:</h2>
+    <ol>
+      <li>preparate l'impasto unsando l'impastatrice per 10 minuti, facendo una pausa di qualche minuto a metà.
+        Potete impastare a mano, e anche qui vi consiglio una piccola pausa (5-10 minuti) dopo aver assemblato gli
+        ingredienti, così da far assorbire meglio l'acqua alla farina e rendere il procedimento più semplice.</li>
+      <li>coprire bene (coperchio o pellicola, meglio non un semplice panno perché l'impasto potrebbe seccarsi in
+        superficie!) e lasciate lievitare l'impasto fino al raddoppio. Io ho provato a far lievitare il mio impasto sia
+        in frigorifero che fuori: in frigo ci ha messo 10-12h, fuori dal frigorifero ci ha messo circa 5-6h. Ma d'estate
+        la lievitazione a temperatura ambiente potrebbe essere più veloce.</li>
+      <li>togliete l'impasto lievitato dalla ciotola e fate qualche piega (mostro nel video come, basta farne veramente
+        4-5). Stendetelo poi nella teglia che userete per la cottura, con sotto abbondante olio evo. Coprite nuovamente
+        e lasciate lievitare fino al raddoppio anche stavolta: in frigo ci vorranno diverse ore (circa 6h), mentre a
+        temperatura ambiente basteranno 2-3h.</li>
+      <li>ungere bene l'impasto e bucherellatelo con le dita. Se non si formano delle belle bolle, potrebbe essere
+        troppo presto, in questo caso lasciatelo lievitare ancora un po'. Condito con sale grosso e rosmarino a piacere,
+        e infornatelo in forno statico già caldo.</li>
+      <li>cottura: io ho cotto la focaccia in forno statico a 250&deg;C per 18-20 minuti.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p id="copyright">&copy; Margarida Ferreira, 2025</p>
+    <ul class='icons'>
+      <li><a href='https://marghrid.github.io' class='fas fa-home'></a></li>
+      <li><a href='https://github.com/marghrid' class='fab fa-github'></a></li>
+      <li><a href='https://linkedin.com/in/marghrid' class='fab fa-linkedin'></a></li>
+    </ul>
+  </footer>
+</body>
+
+<script src="../dark-mode-toggle.js"></script>
+
+</html>
