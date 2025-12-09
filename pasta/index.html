@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Egg pasta recipe</title>
+  <meta charset='UTF-8'>
+  <meta name='description'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
+  <link rel="stylesheet" href="../assets/fontawesome-5.13.1/css/all.css">
+  <link rel="stylesheet" href="../assets/fontawesome-6.7.2/css/all.css">
+  <link rel='stylesheet' type='text/css' href='../style.css' />
+  <link rel='stylesheet' type='text/css' href='style.css' />
+  <meta name='theme-color' content='#ffffff'>
+  <script src="script.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKEB9CVTZX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HKEB9CVTZX');
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" id="darkmode-toggle" />
+  <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
+    <i class="fas fa-sun" id="sun"></i>
+    <i class="fas fa-moon" id="moon"></i>
+  </label>
+
+  <h1> Pasta recipe </h1>
+  <section class="ingredients">
+    <h2>Ingredients:</h2>
+    <p>To make N servings, use N eggs. Enter the total weight of N eggs below.</p>
+    <form onsubmit='return false;'>
+
+      <label for='eggsWeight'>Eggs weight (with shell):</label>
+      <input type='number' id='eggsWeight' name='eggsWeight' oninput='submitForm()' value=125>g<br>
+
+      <!-- Advanced pasta options: -->
+
+      <a href='#' onclick='showPastaAdvanced(this)' id='showAdvancedOptions'>show advanced options</a>
+      <div id='advancedPastaOptions' style='display: none;' class="advancedOptions">
+        <label for='flourWeightRatio'>Total flour to egg weight ratio:</label>
+        <input type='number' id='flourWeightRatio' name='flourWeightRatio' oninput='submitForm()' value=1.43><br>
+
+        <label for='semolinaWeightRatio'>Semolina to total flour weight ratio:</label>
+        <input type='number' id='semolinaWeightRatio' name='semolinaWeightRatio' oninput='submitForm()' value=20>%<br>
+      </div>
+
+    </form>
+
+    <h3>Computed ingredients for the pasta dough:</h3>
+    <ul>
+      <li><span id="eggsOut" class="ingredientAmount">??</span>g eggs</li>
+      <li><span id='apFlour' class='ingredientAmount'>??</span>g AP flour (11.7% proteine)</li>
+      <li><span id='semolinaFlour' class='ingredientAmount'>??</span>g semolina flour</li>
+    </ul>
+  </section>
+
+  <section class='recipe'>
+    <h2>Steps:</h2>
+    <ol>
+      <li>Place flour in a bowl, making a hole in the center. Break the whole eggs into that hole.</li>
+      <li>Start mixing in eggs in the flour from the center outwards with a fork. When it gets too hard to use the fork,
+        start kneading with your hands.</li>
+      <li>Continue kneading until you have a smooth ball of dough. Then, wrap the dough ball in plastic wrap, and let it
+        rest for 30min before shaping.</li>
+      <li>To shape, cut the ball into 2N pieces. Work each piece into your desired pasta shape. While working each of
+        the pieces, keep the rest of the dough covered in the wrap to prevent drying out. After working, cover the pasta
+        in flour.</li>
+      <li>Cook for a 3 to 5 minutes in boiling water, salted until it tastes like the sea.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p id="copyright">&copy; Margarida Ferreira, 2025</p>
+    <ul class='icons'>
+      <li><a href='https://marghrid.github.io' class='fas fa-home'></a></li>
+      <li><a href='https://github.com/marghrid' class='fab fa-github'></a></li>
+      <li><a href='https://linkedin.com/in/marghrid' class='fab fa-linkedin'></a></li>
+    </ul>
+  </footer>
+</body>
+
+<script src="../dark-mode-toggle.js"></script>
+
+</html>
