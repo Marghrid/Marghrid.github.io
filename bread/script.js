@@ -156,7 +156,7 @@ function computeAmounts(
   // );
   console.assert(
     Math.abs(finalWw + finalAp + finalWater + finalSalt + leavenUsed - total) <
-      1,
+    1,
     "Ingredients do not add up.",
     finalWw,
     finalAp,
@@ -170,7 +170,12 @@ function computeAmounts(
   finalAp = Math.round(finalAp);
   finalWw = Math.round(finalWw);
   finalWater = Math.round(finalWater);
-  finalSalt = Math.round(finalSalt);
+  if (finalSalt < 10) {
+    finalSalt = Math.round(finalSalt * 10) / 10;
+  } else {
+    finalSalt = Math.round(finalSalt);
+  }
+
 
   updateAmounts(
     finalLeaven,

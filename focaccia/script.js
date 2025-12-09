@@ -78,8 +78,17 @@ function computeAmounts(
 
   finalAp = Math.round(finalAp);
   finalWater = Math.round(finalWater);
-  finalSalt = Math.round(finalSalt);
-  finalYeast = Math.round(finalYeast);
+  if (finalSalt < 10) {
+    finalSalt = Math.round(finalSalt * 10) / 10;
+  } else {
+    finalSalt = Math.round(finalSalt);
+  }
+
+  if (finalYeast < 10) {
+    finalYeast = Math.round(finalYeast * 10) / 10;
+  } else {
+    finalYeast = Math.round(finalYeast);
+  }
   finalOliveOil = Math.round(finalOliveOil);
 
   updateAmounts(
