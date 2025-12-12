@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Tortillas recipe</title>
+  <meta charset='UTF-8'>
+  <meta name='description'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather' />
+  <link rel="stylesheet" href="../assets/fontawesome-5.13.1/css/all.css">
+  <link rel="stylesheet" href="../assets/fontawesome-6.7.2/css/all.css">
+  <link rel='stylesheet' type='text/css' href='../style.css' />
+  <link rel='stylesheet' type='text/css' href='style.css' />
+  <meta name='theme-color' content='#ffffff'>
+  <script src="script.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKEB9CVTZX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HKEB9CVTZX');
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" id="darkmode-toggle" />
+  <label for="darkmode-toggle" id="darkmode-toggle-label" onclick="toggleDarkMode()">
+    <i class="fas fa-sun" id="sun"></i>
+    <i class="fas fa-moon" id="moon"></i>
+  </label>
+
+  <h1> Tortillas recipe </h1>
+  <section class="ingredients">
+    <h2>Ingredients:</h2>
+    <form onsubmit='return false;'>
+
+      <label for='numberTortillas'>Number of tortillas:</label>
+      <input type='number' min=0 step="2" id='numberTortillas' name='numberTortillas' oninput='handleDecimalInput(this)'
+        value=8><br>
+
+      <!-- Advanced tortilla options: -->
+
+      <a href='#' onclick='showTortillaAdvanced(this)' id='showAdvancedOptions'>show advanced options</a>
+      <div id='advancedTortillaOptions' style='display: none;' class="advancedOptions">
+
+        <label for='flourPerTortilla'>Flour per tortilla:</label>
+        <input type='number' min=0 step=1 id='flourPerTortilla' name='flourPerTortilla'
+          oninput='handleDecimalInput(this)' value=30>g<br>
+
+        <label for='hydration'>Hydration:</label>
+        <input type='number' min=0 step=1 id='hydration' name='hydration' oninput='handleDecimalInput(this)' value=65>%
+        <span id="hydrationWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='hydrationWarningText' class='ingredientAmount'>??</span>
+        </span><br>
+
+
+        <label for='butterRatio'>Butter ratio:</label>
+        <input type='number' min=0 step=1 id='butterRatio' name='butterRatio' oninput='handleDecimalInput(this)'
+          value=10>%
+        <span id="butterRatioWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='butterRatioWarningText'
+            class='ingredientAmount'>??</span>
+        </span><br>
+
+        <label for='saltRatio'>Salt ratio:</label>
+        <input type='number' min=0 step=0.1 id='saltRatio' name='saltRatio' oninput='handleDecimalInput(this)' value=3>%
+        <span id="saltRatioWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='saltRatioWarningText' class='ingredientAmount'>??</span>
+        </span><br>
+
+        <label for='bakingPowderRatio'>Baking powder ratio:</label>
+        <input type='number' min=0 step=0.1 id='bakingPowderRatio' name='bakingPowderRatio'
+          oninput='handleDecimalInput(this)' value=2.5>%
+        <span id="bakingPowderRatioWarning" style='display: none; margin-left: 1em;' class='warning'>
+          <i class="fas fa-exclamation-triangle"></i><span id='bakingPowderRatioWarningText'
+            class='ingredientAmount'>??</span>
+        </span><br>
+
+      </div>
+
+    </form>
+
+    <h3>Computed ingredients for the tortilla dough:</h3>
+    <ul>
+      <li><span id="flour" class="ingredientAmount">??</span>g flour</li>
+      <li><span id="water" class="ingredientAmount">??</span>g hot water</li>
+      <li><span id='butter' class='ingredientAmount'>??</span>g softened butter</li>
+      <li><span id='salt' class='ingredientAmount'>??</span>g salt</li>
+      <li><span id='bakingPowder' class='ingredientAmount'>??</span>g baking powder</li>
+    </ul>
+  </section>
+
+  <section class='recipe'>
+    <h2>Steps:</h2>
+    <ol>
+      <li>In a bowl, combine the flour, baking powder, and salt. Add the butter, then pour over the hot water. Stir
+        until a shaggy dough begins to form.</li>
+      <li>Turn the dough out onto a floured counter. Use your hands to knead the dough for 1-2 minutes until it forms a
+        smooth ball. Cover the bowl with a damp towel and let rest 10 minutes.</li>
+      <li> Cut the dough into <span id="numberTortillasOut" class="ingredientAmount">??</span> equal wedges, then roll
+        each wedge into a ball (they don't need to be perfect). Use a rolling pin or a tortilla press to roll the dough
+        out into an 8-inch circle.</li>
+      <li>Heat a skillet over medium-high heat. Add a small drizzle of olive oil, then a tortilla. Cook 30-60 seconds,
+        until little bubbles appear on the surface. Flip and cook another 30 seconds, or until the bottom is slightly
+        golden. Set on a plate and cover with a towel. Repeat with the remaining dough.</li>
+      <li>Serve warm (yum!) or save for later. Keep the tortillas stored in an airtight container for up to 3 days.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p id="copyright">&copy; Margarida Ferreira, 2025</p>
+    <ul class='icons'>
+      <li><a href='https://marghrid.github.io' class='fas fa-home'></a></li>
+      <li><a href='https://github.com/marghrid' class='fab fa-github'></a></li>
+      <li><a href='https://linkedin.com/in/marghrid' class='fab fa-linkedin'></a></li>
+    </ul>
+  </footer>
+</body>
+
+<script src="../dark-mode-toggle.js"></script>
+
+</html>
